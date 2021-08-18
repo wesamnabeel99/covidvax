@@ -10,6 +10,6 @@ class AboutFragment: BaseFragment<FragmentAboutBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentAboutBinding = FragmentAboutBinding::inflate
 
     override fun addCallbacks() {
-
+        //write your callbacks code here
     }
 }

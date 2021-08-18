@@ -12,7 +12,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding = FragmentHomeBinding::inflate
 
     override fun addCallbacks() {
-
+        //write your callbacks code here
     }
 
 

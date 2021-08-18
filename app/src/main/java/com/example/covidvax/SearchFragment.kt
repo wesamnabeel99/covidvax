@@ -10,6 +10,6 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding = FragmentSearchBinding::inflate
 
     override fun addCallbacks() {
-
+        //write your callbacks code here
     }
 }

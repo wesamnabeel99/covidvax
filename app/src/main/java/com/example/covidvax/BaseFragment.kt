@@ -31,6 +31,8 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
         addCallbacks()
     }
 
+
+
     abstract fun addCallbacks()
 
     protected fun log(value: String){

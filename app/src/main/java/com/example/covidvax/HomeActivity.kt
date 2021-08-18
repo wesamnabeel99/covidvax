@@ -21,17 +21,25 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * setup HomeActivity onCreate function
+     */
     fun setup(){
         addFragment(homeFragment)
     }
 
-
+    /**
+     * add fragment to the main activity
+     */
     private fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container,fragment)
         transaction.commit()
     }
 
+    /**
+     * rplace the existed fragment with the given fragment
+     */
     private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,fragment)

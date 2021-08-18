@@ -10,6 +10,6 @@ class DataFragment: BaseFragment<FragmentDataBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentDataBinding = FragmentDataBinding::inflate
 
     override fun addCallbacks() {
-
+        //write your callbacks code here
     }
 }
