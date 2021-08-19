@@ -1,4 +1,4 @@
-package com.example.covidvax
+package com.example.covidvax.ui
 
 import android.os.Bundle
 import android.util.Log
