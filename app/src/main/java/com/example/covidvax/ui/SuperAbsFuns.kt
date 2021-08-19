@@ -13,22 +13,23 @@ abstract class SuperAbsFuns<vb:ViewBinding>:AppCompatActivity() {
     abstract val LOG_TAG:String
     private lateinit var _binding :vb
     abstract val bindingInflater : (LayoutInflater) -> vb
-
+    val binding get() =
+        _binding as vb?
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = bindingInflater(layoutInflater)
+        _binding =  bindingInflater(layoutInflater)
         setContentView(_binding.root)
 
         //calling abstract functions to be executed
-        openData()
+        openStart()
         initializeCallBack()
     }
-
     abstract fun initializeCallBack()
 
-    abstract fun openData()
+    abstract fun openStart()
 
-    protected fun logV(str:String){
-        Log.v(LOG_TAG,str)
+    protected fun logV(str:Any){
+        Log.v(LOG_TAG,str.toString())
     }
+
 }
