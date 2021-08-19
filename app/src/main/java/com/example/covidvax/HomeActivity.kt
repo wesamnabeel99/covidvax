@@ -11,6 +11,9 @@ import java.io.InputStreamReader
 class HomeActivity : AppCompatActivity() {
 
     private val homeFragment = HomeFragment()
+    private val searchFragment = SearchFragment()
+    private val dataFragment = DataFragment()
+    private val aboutFragment = AboutFragment()
 
     lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +29,32 @@ class HomeActivity : AppCompatActivity() {
      */
     fun setup(){
         addFragment(homeFragment)
+        addNavigationListner()
+    }
+
+    private fun addNavigationListner() {
+        binding.bottomNavBar.setOnItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.home_button -> {
+                    replaceFragment(homeFragment)
+                    true
+                }
+                R.id.search_button -> {
+                    replaceFragment(searchFragment)
+                    true
+                }
+                R.id.data_button -> {
+                    replaceFragment(dataFragment)
+                    true
+                }
+                R.id.about_button -> {
+                    replaceFragment(aboutFragment)
+                    true
+                }
+                else -> false
+            }
+
+        }
     }
 
     /**
