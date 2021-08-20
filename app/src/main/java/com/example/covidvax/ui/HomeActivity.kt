@@ -1,12 +1,10 @@
-package com.example.covidvax
+package com.example.covidvax.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
+import com.example.covidvax.R
 import com.example.covidvax.databinding.ActivityHomeBinding
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 class HomeActivity : AppCompatActivity() {
 
