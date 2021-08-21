@@ -1,5 +1,6 @@
 package com.example.covidvax.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -29,6 +30,13 @@ class HomeActivity : AppCompatActivity() {
     fun setup(){
         addFragment(homeFragment)
         addNavigationListner()
+        addCallBacks()
+    }
+
+    private fun addCallBacks() {
+        binding.clickMe.setOnClickListener {
+            startActivity(Intent(this,DataActivity::class.java))
+        }
     }
 
     private fun addNavigationListner() {

@@ -2,9 +2,11 @@ package com.example.covidvax.utils
 
 import com.example.covidvax.data.VacDay
 
-class DataManager {
+object DataManager {
+    // don't take this class, just change your work from DataActivity to HomeActivity
     private val daysList = mutableListOf<VacDay>()
     private var dayIndex = 0
+
 
     fun addDay (vacDay:VacDay) {
         daysList.add(vacDay)
