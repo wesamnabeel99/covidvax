@@ -2,11 +2,12 @@ package com.example.covidvax.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.covidvax.R
+import com.example.covidvax.data.DailyData
 import com.example.covidvax.databinding.ActivityHomeBinding
-import com.example.covidvax.utils.CSVParser
+import com.example.covidvax.utils.DataParser
+import com.example.covidvax.utils.DataManager
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -24,7 +25,6 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setup()
-
     }
 
     /**
@@ -81,13 +81,14 @@ class HomeActivity : AppCompatActivity() {
     fun openAssetFile(){
         val inputStream = assets.open("country_vaccinations.csv")
         val buffer = BufferedReader(InputStreamReader(inputStream))
-        val parser = CSVParser()
+        val parser = DataParser()
         buffer.forEachLine {
             val day = parser.parsing(it)
-            Log.v(LOG_TAG,day.toString())
+            DataManager.addDay(day)
         }
+        DataManager.getCurrentDay()
     }
     companion object{
-        var LOG_TAG = "HomeActivityData"
+        var LOG_TAG = "HOME_ACTIVITY_DATA"
     }
 }
