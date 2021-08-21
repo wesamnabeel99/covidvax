@@ -33,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
     fun setup(){
         addFragment(homeFragment)
         addNavigationListner()
+        openAssetFile()
     }
 
     private fun addNavigationListner() {
