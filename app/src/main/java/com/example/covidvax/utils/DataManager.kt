@@ -1,22 +1,22 @@
 package com.example.covidvax.utils
 
-import com.example.covidvax.data.VacDay
+import com.example.covidvax.data.DailyData
 
-class DataManager {
-    private val daysList = mutableListOf<VacDay>()
+object DataManager {
+    private val daysList = mutableListOf<DailyData>()
     private var dayIndex = 0
 
-    fun addDay (vacDay:VacDay) {
-        daysList.add(vacDay)
+    fun addDay (dailyData:DailyData) {
+        daysList.add(dailyData)
     }
 
-    fun getCurrentDay():VacDay = daysList[dayIndex]
+    fun getCurrentDay():DailyData = daysList[dayIndex]
 
-    fun getNextDay() :VacDay {
+    fun getNextDay() :DailyData {
         dayIndex++
         return daysList[dayIndex]
     }
-    fun getPrevDay() :VacDay {
+    fun getPrevDay() :DailyData {
         dayIndex--
         return daysList[dayIndex]
     }
