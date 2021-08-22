@@ -1,4 +1,4 @@
-package com.example.covidvax
+package com.example.covidvax.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -28,10 +28,9 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         addCallbacks()
     }
-
-
 
     abstract fun addCallbacks()
 
