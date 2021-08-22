@@ -1,5 +1,6 @@
 package com.example.covidvax.utils
 
+import android.util.Log
 import com.example.covidvax.data.DailyData
 
 object DataManager {
@@ -32,7 +33,7 @@ object DataManager {
      */
     fun mapTheData () {
         countriesSet.forEach() {
-            dataMap.put (it, filterListByCountry(it))
+            dataMap.put (it.lowercase(), filterListByCountry(it))
         }
     }
     /**
@@ -40,6 +41,20 @@ object DataManager {
      * @return list of data entries for the gven country
      * @author  Mohammed Zalzala
      */
-    fun filterListByCountry(country:String) = daysList.filter { it.country == country } as MutableList<DailyData>
+    private fun filterListByCountry(country:String) = daysList.filter { it.country == country } as MutableList<DailyData>
+    //endregion
+
+    //region search functions
+    /**
+     * @param country:String
+     * @return the last statistics as an object for the given country
+     * @author  Wesam N. Shawqi
+     */
+    fun getLastStatistics (country: String): DailyData? {
+        if (country in dataMap.keys) {
+            return dataMap[country]!!.last()
+        }
+        else return null
+    }
     //endregion
 }
