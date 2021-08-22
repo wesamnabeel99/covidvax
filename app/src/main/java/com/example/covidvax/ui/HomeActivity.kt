@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.covidvax.R
-import com.example.covidvax.data.DailyData
 import com.example.covidvax.databinding.ActivityHomeBinding
 import com.example.covidvax.utils.DataParser
 import com.example.covidvax.utils.DataManager
@@ -25,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setup()
+
     }
 
     /**
@@ -78,6 +78,7 @@ class HomeActivity : AppCompatActivity() {
         transaction.replace(R.id.fragment_container,fragment)
         transaction.commit()
     }
+    // open assets file and parse it
     fun openAssetFile(){
         val inputStream = assets.open("country_vaccinations.csv")
         val buffer = BufferedReader(InputStreamReader(inputStream))

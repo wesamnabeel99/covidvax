@@ -1,9 +1,10 @@
 package com.example.covidvax.utils
 
+import android.util.Log
 import com.example.covidvax.data.DailyData
 
 object DataManager {
-    private val daysList = mutableListOf<DailyData>()
+    val daysList = mutableListOf<DailyData>()
     private var dayIndex = 0
 
     fun addDay (dailyData:DailyData) {
@@ -20,4 +21,10 @@ object DataManager {
         dayIndex--
         return daysList[dayIndex]
     }
+
+    fun lastIndexOfFilteredList(country:String) = daysList.findLast { it.country == country }
+
+
+    fun filteredListByCountry(country:String) = daysList.filter { it.country == country }
+
 }
