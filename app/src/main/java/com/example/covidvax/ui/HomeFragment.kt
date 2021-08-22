@@ -9,19 +9,14 @@ import com.example.covidvax.utils.DataManager
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    override val LOG_TAG: String = "HOME_FRAGMENT"
 
+    override val LOG_TAG: String = "HOME_FRAGMENT"
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) ->
     FragmentHomeBinding = FragmentHomeBinding::inflate
 
+//region callbacks
     override fun addCallbacks() {
-        bindDay (DataManager.getCurrentDay())
-        binding!!.next.setOnClickListener {
-            bindDay(DataManager.getNextDay())
-        }
-        binding!!.previous.setOnClickListener {
-            bindDay(DataManager.getPrevDay())
-        }
+
     }
 
     /**
@@ -32,10 +27,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
      */
     private fun bindDay (day:DailyData) {
         binding?.apply {
-            textView.text = DataManager.getCurrentDay().date
-            fullyVaccinated.text = DataManager.getCurrentDay().peopleFullyVaccinated.toString()
-            dailyVaccinated.text = DataManager.getCurrentDay().dailyVaccinations.toString()
         }
     }
-
+//endregion
 }

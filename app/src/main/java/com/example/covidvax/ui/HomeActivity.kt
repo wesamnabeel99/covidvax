@@ -12,28 +12,33 @@ import java.io.InputStreamReader
 
 class HomeActivity : AppCompatActivity() {
 
+    //region initilize variables
     private val homeFragment = HomeFragment()
     private val searchFragment = SearchFragment()
     private val dataFragment = DataFragment()
     private val aboutFragment = AboutFragment()
-
     lateinit var binding: ActivityHomeBinding
+    //endregion
+
+    //region onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Covidvax)
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setup()
-
     }
+    //endregion
 
+    //region setup
     /**
      * setup HomeActivity onCreate function
+     * @author Karrar Mohammed
      */
     fun setup(){
         addFragment(homeFragment)
         addNavigationListner()
-        openAssetFile()
+        parseTheData()
     }
 
     private fun addNavigationListner() {
@@ -61,8 +66,28 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+
+
     /**
-     * add fragment to the main activity
+     * open the file and parse the data
+     * @author Mohammed Zalzala
+     */
+    fun parseTheData(){
+        val inputStream = assets.open("country_vaccinations.csv")
+        val buffer = BufferedReader(InputStreamReader(inputStream))
+        val parser = DataParser()
+        buffer.forEachLine {
+            val day = parser.parsing(it)
+            DataManager.addDay(day)
+        }
+        DataManager.mapTheData()
+    }
+    //endregion
+
+    //region add fragments
+    /**
+     * add fragment to the home activity
+     * @author Karrar Mohammed
      */
     private fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
@@ -71,24 +96,17 @@ class HomeActivity : AppCompatActivity() {
     }
 
     /**
-     * rplace the existed fragment with the given fragment
+     * replace the existed fragment with the given fragment
+     * @param fragment:Fragment
+     * @author Karrar Mohammed
      */
     private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,fragment)
         transaction.commit()
     }
-    // open assets file and parse it
-    fun openAssetFile(){
-        val inputStream = assets.open("country_vaccinations.csv")
-        val buffer = BufferedReader(InputStreamReader(inputStream))
-        val parser = DataParser()
-        buffer.forEachLine {
-            val day = parser.parsing(it)
-            DataManager.addDay(day)
-        }
-        DataManager.getCurrentDay()
-    }
+    //endregion
+    
     companion object{
         var LOG_TAG = "HOME_ACTIVITY_DATA"
     }
