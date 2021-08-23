@@ -3,7 +3,7 @@ package com.example.covidvax.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.covidvax.data.DailyData
+import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentHomeBinding
 import com.example.covidvax.utils.DataManager
 
@@ -16,8 +16,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
 //region callbacks
     override fun addCallbacks() {
+        val world = DataManager.worldStatistics()
+        bindDay(world!!)
 
     }
+
+
 
     /**
      * this function will bind the data of the day into ui
@@ -25,8 +29,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
      * @param day, an object from the DailyData class
      * @return nothing
      */
-    private fun bindDay (day:DailyData) {
+    private fun bindDay (day:VaccineData) {
         binding?.apply {
+            fullyVaccinated.text = day.totalPeopleVaccinated.toString() + "\n" + day.oneDoseVaccinated.toString() + "\n" + day.twoDoseVaccinated.toString()
+
         }
     }
 //endregion

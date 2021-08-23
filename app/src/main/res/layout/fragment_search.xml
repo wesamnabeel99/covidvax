@@ -8,19 +8,21 @@
     <EditText
         android:id="@+id/editText"
         android:layout_width="0dp"
-        android:inputType="textAutoComplete"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="search for country ..."
+        android:inputType="textAutoComplete"
         app:layout_constraintEnd_toStartOf="@+id/searchButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="seach"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/total_vaccinated"

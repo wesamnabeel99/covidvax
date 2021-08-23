@@ -1,12 +1,10 @@
 package com.example.covidvax.ui
 
 import android.transition.TransitionManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.covidvax.data.DailyData
+import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentSearchBinding
-import com.example.covidvax.ui.BaseFragment
 import com.example.covidvax.utils.DataManager
 
 class SearchFragment: BaseFragment<FragmentSearchBinding>() {
@@ -16,7 +14,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     override fun addCallbacks() {
     binding?.searchButton!!.setOnClickListener {
-    val result = DataManager.getLastStatistics(binding?.editText!!.text.toString().lowercase())
+    val result = DataManager.countryStatistics(binding?.editText!!.text.toString().lowercase())
         TransitionManager.beginDelayedTransition(binding?.root)
         when (result) {
             null -> {
@@ -29,7 +27,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     }
     }
 
-    private fun bindTheData(lastDay:DailyData) {
+    private fun bindTheData(lastDay:VaccineData) {
         binding?.apply {
             totalVaccinated.text = lastDay.totalPeopleVaccinated.toString()
             fullyVaccinated.text = lastDay.twoDoseVaccinated.toString()
