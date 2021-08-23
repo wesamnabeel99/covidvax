@@ -10,7 +10,8 @@ import com.example.covidvax.ui.BaseFragment
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override val LOG_TAG: String = "HOME_FRAGMENT"
 
-    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding = FragmentHomeBinding::inflate
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) ->
+    FragmentHomeBinding = FragmentHomeBinding::inflate
 
     override fun addCallbacks() {
         //write your callbacks code here
