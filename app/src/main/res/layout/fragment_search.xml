@@ -136,7 +136,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginTop="8dp"
-                        android:text="800"
+                        android:text="N/A"
                         android:textColor="#3F51B5"
                         android:textSize="20sp"
                         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -175,7 +175,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginTop="8dp"
-                        android:text="95 K"
+                        android:text="N/A"
                         android:textColor="#C3DC2D2D"
                         android:textSize="20sp"
                         app:layout_constraintTop_toBottomOf="@+id/textView12"
@@ -215,7 +215,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginTop="8dp"
-                        android:text="150 K"
+                        android:text="N/A"
                         android:textColor="#2196F3"
                         android:textSize="20sp"
                         app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -252,20 +252,34 @@
                     android:elevation="8dp">
 
                     <TextView
-                        android:id="@+id/vaccinated_per_hundred"
+                        android:id="@+id/country"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
-                        android:text="text"
-                        android:textColor="@color/brand"
-                        android:textSize="30sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                    <TextView
+                        android:id="@+id/vaccinated_per_hundred"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/brand"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@+id/country"
+                        app:layout_constraintTop_toBottomOf="@+id/country" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animation"
+                        app:lottie_rawRes="@raw/evilcovid"
+                        app:lottie_loop="true"
+                        app:lottie_autoPlay="true"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:layout_margin="32dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
