@@ -8,5 +8,6 @@ object Constants {
         const val ONE_DOSE_VACCINATED = 4
         const val TWO_DOSE_VACCINATED = 5
         const val DAILY_VACCINATIONS = 6
+        const val VACCINATED_PER_HUNDRED = 8
     }
 }

@@ -1,6 +1,8 @@
 package com.example.covidvax.utils
 
+import android.icu.text.CompactDecimalFormat
 import com.example.covidvax.data.VaccineData
+import java.lang.Float.parseFloat
 
 object DataManager {
     //region initialize variables
@@ -57,7 +59,8 @@ object DataManager {
                 totalPeopleVaccinated = countriesMap[country]!!.sortedBy { it.totalPeopleVaccinated }.last().totalPeopleVaccinated,
                 oneDoseVaccinated = countriesMap[country]!!.sortedBy { it.oneDoseVaccinated }.last().oneDoseVaccinated,
                 twoDoseVaccinated = countriesMap[country]!!.sortedBy { it.twoDoseVaccinated }.last().twoDoseVaccinated,
-                dailyVaccinations = countriesMap[country]!!.sortedBy { it.dailyVaccinations }.last().dailyVaccinations
+                dailyVaccinations = countriesMap[country]!!.sortedBy { it.dailyVaccinations }.last().dailyVaccinations,
+                vaccinatedPerHundred = countriesMap[country]!!.sortedBy { it.vaccinatedPerHundred }.last().vaccinatedPerHundred
             )
         }
         else return null
@@ -73,21 +76,42 @@ object DataManager {
         var worldTotalVaccinations: Long = 0
         var worldOneDoseVaccination: Long = 0
         var worldTwoDoseVaccination: Long = 0
+        var averageVaccinatedPerHundred:Double=0.0
         countriesMap.forEach {
             val countryData = countryStatistics(it.key)
             worldTotalVaccinations += countryData?.totalPeopleVaccinated!!
-            worldOneDoseVaccination += countryData?.oneDoseVaccinated!!
-            worldTwoDoseVaccination += countryData?.twoDoseVaccinated!!
-
+            worldOneDoseVaccination += countryData.oneDoseVaccinated!!
+            worldTwoDoseVaccination += countryData.twoDoseVaccinated!!
+            averageVaccinatedPerHundred += countryData.vaccinatedPerHundred!!
         }
+        averageVaccinatedPerHundred/= countriesSet.size
         return VaccineData(
             country = "World",
             date = "all time",
             totalPeopleVaccinated = worldTotalVaccinations,
             oneDoseVaccinated = worldOneDoseVaccination,
             twoDoseVaccinated = worldTwoDoseVaccination,
-            dailyVaccinations = 0
+            dailyVaccinations = 0,
+            vaccinatedPerHundred = averageVaccinatedPerHundred
         )
     }
-    //endregion
+
+    /**
+     * this function will make the number as an abbreviated string
+     * @author aioobe
+     * @param Long number representing the data
+     * @return abbreviated string of the string
+     * source https://stackoverflow.com/questions/9769554/how-to-convert-number-into-k-thousands-m-million-and-b-billion-suffix-in-jsp
+     */
+    fun roundTheNumber(number:Long):String {
+        if (number < 1000) return "" + number
+        val exp = (Math.log(number.toDouble()) / Math.log(1000.0)).toInt()
+        return java.lang.String.format(
+            "%.1f %c", //format the apperance of the number
+            number / Math.pow(1000.0, exp.toDouble()),
+            "kMB"[exp - 1]
+        )
+    }
+
+        //endregion
 }

@@ -88,6 +88,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/search_bar"
                         app:layout_constraintEnd_toEndOf="@+id/search_bar"
                         app:layout_constraintTop_toTopOf="@+id/search_bar" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -98,19 +99,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:text="Daily Updates:"
+                android:text="Available Data"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView4"
                 android:layout_width="115dp"
                 android:layout_height="130dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
 
                 app:cardCornerRadius="20dp"
                 app:layout_constraintStart_toStartOf="@+id/textView"
@@ -135,10 +135,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_marginTop="8dp"
                         android:text="800"
                         android:textColor="#3F51B5"
-                        android:textSize="30sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textSize="20sp"
                         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -174,10 +174,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_marginTop="8dp"
                         android:text="95 K"
                         android:textColor="#C3DC2D2D"
-                        android:textSize="30sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textSize="20sp"
                         app:layout_constraintTop_toBottomOf="@+id/textView12"
                         tools:layout_editor_absoluteX="16dp" />
 
@@ -214,10 +214,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_marginTop="8dp"
                         android:text="150 K"
                         android:textColor="#2196F3"
-                        android:textSize="30sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:textSize="20sp"
                         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -229,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Data Updates:"
+                android:text="Vaccination Journey:"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -252,29 +252,34 @@
                     android:elevation="8dp">
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/vaccinated_per_hundred"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Country: Germany"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
+                        android:layout_margin="16dp"
+                        android:text="text"
+                        android:textColor="@color/brand"
+                        android:textSize="30sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="32dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.542"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.282" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="Date:8/20/2021"
-                        android:textColor="@color/black"
-                        app:layout_constraintStart_toStartOf="@+id/textView6"
-                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/last_update_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="last update on :"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

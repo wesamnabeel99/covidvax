@@ -15,7 +15,10 @@ class DataParser {
         twoDoseVaccinated =
         token[Constants.ColumnIndex.TWO_DOSE_VACCINATED].toDoubleOrNull()
             ?.toLong()?:0,
-        dailyVaccinations = token[Constants.ColumnIndex.DAILY_VACCINATIONS].toIntOrNull()?:0
+        dailyVaccinations = token[Constants.ColumnIndex.DAILY_VACCINATIONS].toLongOrNull()?:0,
+        vaccinatedPerHundred = token[Constants.ColumnIndex.VACCINATED_PER_HUNDRED].toDoubleOrNull()?:0.0
     )
     }
 }
+
+// ?: called the elvis operator, it means if the value was null change it to zero, else take it

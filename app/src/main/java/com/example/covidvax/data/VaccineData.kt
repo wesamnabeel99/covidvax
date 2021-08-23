@@ -6,5 +6,6 @@ data class VaccineData(
     val totalPeopleVaccinated:Long?,
     val oneDoseVaccinated:Long?,
     val twoDoseVaccinated:Long?,
-    val dailyVaccinations:Int?
+    val dailyVaccinations:Long?,
+    val vaccinatedPerHundred:Double?
 )
