@@ -1,6 +1,7 @@
 package com.example.covidvax.ui
 
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.covidvax.data.VaccineData
@@ -21,15 +22,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
 
+
+
     /**
      * this function will bind the data of the day into ui
      * @author Wesam N. Shawqi
-     * @param day, an object from the DailyData class
+     * @param data, an object from the DailyData class
      * @return nothing
      */
-    private fun bindDay (day:VaccineData) {
+    private fun bindDay (data:VaccineData) {
         binding?.apply {
-
+            firstDataView.text = "One Dose Vaccinated : ${DataManager.abbreviateTheNumber(data.oneDoseVaccinated!!)}"
+            secondDataView.text = "two Dose Vaccinated : ${DataManager.abbreviateTheNumber(data.twoDoseVaccinated!!)}"
+            thirdDataView.text = "total Vaccinated : ${DataManager.abbreviateTheNumber(data.totalPeopleVaccinated!!)}"
+            forthDataView.text = "percent : ${DataManager.abbreviateTheNumber(data.vaccinatedPerHundred!!.toLong())}%"
 
         }
     }
