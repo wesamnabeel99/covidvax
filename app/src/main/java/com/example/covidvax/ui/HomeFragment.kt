@@ -18,7 +18,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun addCallbacks() {
         val world = DataManager.worldStatistics()
         bindDay(world!!)
-
     }
 
 
@@ -30,7 +29,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
      */
     private fun bindDay (day:VaccineData) {
         binding?.apply {
-//            fullyVaccinated.text = day.totalPeopleVaccinated.toString() + "\n" + day.oneDoseVaccinated.toString() + "\n" + day.twoDoseVaccinated.toString()
+
 
         }
     }
