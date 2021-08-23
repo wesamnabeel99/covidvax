@@ -1,12 +1,12 @@
 package com.example.covidvax.utils
 
 object Constants {
-    object RowIndex {
-        const val country = 0
-        const val date = 2
-        const val total_vaccinations = 3
-        const val people_vaccinated = 4
-        const val people_fully_vaccinated = 5
-        const val daily_vaccinations = 6
+    object ColumnIndex {
+        const val COUNTRY = 0
+        const val DATE = 2
+        const val TOTAL_PEOPLE_VACCINATED = 3
+        const val ONE_DOSE_VACCINATED = 4
+        const val TWO_DOSE_VACCINATED = 5
+        const val DAILY_VACCINATIONS = 6
     }
 }
