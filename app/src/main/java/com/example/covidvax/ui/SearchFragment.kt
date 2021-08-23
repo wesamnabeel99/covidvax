@@ -1,11 +1,13 @@
 package com.example.covidvax.ui
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentSearchBinding
 import com.example.covidvax.utils.DataManager
+import org.eazegraph.lib.models.PieModel
 
 class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override val LOG_TAG: String = "SEARCH_FRAGMENT"
@@ -17,6 +19,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         val countryStatistics =DataManager.countryStatistics(binding?.searchBar?.text!!.toString().lowercase())
         if (countryStatistics!=null) {
             bindTheData(countryStatistics)
+            addToPieChart(countryStatistics)
         } else {
             notFound()
         }
@@ -58,4 +61,16 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             country.text="not found"
             animation!!.setAnimation(R.raw.notfound)
             animation.playAnimation()
-        }    }}
+        }
+    }
+
+    private fun addToPieChart(day: VaccineData) {
+        binding?.apply {
+            pieChart.clearChart()
+//            pieChart.addPieSlice(PieModel("total vaccination", day.totalPeopleVaccinated!!.toFloat(),Color.parseColor("#3F51B5")))
+            pieChart.addPieSlice(PieModel("two dose vaccination", day.twoDoseVaccinated!!.toFloat(),Color.parseColor("#C3DC2D2D")))
+            pieChart.addPieSlice(PieModel("one dose vaccination", day.oneDoseVaccinated!!.toFloat(),Color.parseColor("#2196F3")))
+            pieChart.startAnimation()
+        }
+    }
+}
