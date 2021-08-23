@@ -66,8 +66,9 @@
                         android:layout_height="56dp"
                         android:layout_marginTop="24dp"
                         android:background="@drawable/backgroundimg1"
+                        android:inputType="text"
                         android:drawableRight="@drawable/ic_baseline_search_24"
-                        android:hint="Enter your city name"
+                        android:hint="Enter your country name"
                         android:padding="8dp"
                         android:layout_marginBottom="24dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,11 +116,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
-                        android:text="Daily Vaccinated"
+                        android:text="Total Vaccinated"
                         android:textColor="@color/black"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/total_vaccinated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -158,6 +160,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fully_vaccinated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -197,6 +200,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/daily_vaccinated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"

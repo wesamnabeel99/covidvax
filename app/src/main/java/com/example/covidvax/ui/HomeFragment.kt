@@ -31,7 +31,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
      */
     private fun bindDay (day:VaccineData) {
         binding?.apply {
-            fullyVaccinated.text = day.totalPeopleVaccinated.toString() + "\n" + day.oneDoseVaccinated.toString() + "\n" + day.twoDoseVaccinated.toString()
+//            fullyVaccinated.text = day.totalPeopleVaccinated.toString() + "\n" + day.oneDoseVaccinated.toString() + "\n" + day.twoDoseVaccinated.toString()
 
         }
     }
