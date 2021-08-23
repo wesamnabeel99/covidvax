@@ -23,7 +23,6 @@
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
                 android:text="Restaurent Overviews"
-                app:cardCornerRadius="12dp"
                 android:textColor="#232121"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -33,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="16dp"
-                    android:background="#B5112AA8" >
+                    android:background="@drawable/card_view_shape" >
 
                     <TextView
                         android:id="@+id/textView7"
@@ -117,7 +116,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:padding="4dp">
 
                     <TextView
                         android:id="@+id/textView11"
@@ -271,13 +271,22 @@
                         app:layout_constraintStart_toStartOf="@+id/country"
                         app:layout_constraintTop_toBottomOf="@+id/country" />
 
+                    <org.eazegraph.lib.charts.PieChart
+                        android:id="@+id/pie_chart"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/country"
+                        app:layout_constraintEnd_toStartOf="@+id/animation"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/animation"
                         app:lottie_rawRes="@raw/evilcovid"
                         app:lottie_loop="true"
                         app:lottie_autoPlay="true"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_margin="32dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
