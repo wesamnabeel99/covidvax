@@ -13,31 +13,26 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding = FragmentSearchBinding::inflate
 
     override fun addCallbacks() {
-//    binding?.searchButton!!.setOnClickListener {
-//    val result = DataManager.countryStatistics(binding?.editText!!.text.toString().lowercase())
-//        TransitionManager.beginDelayedTransition(binding?.root)
-//        when (result) {
-//            null -> {
-//                notFound()
-//            }
-//            else -> {
-//                bindTheData(result)
-//            }
-//        }
+    binding?.searchButton!!.setOnClickListener {
+        DataManager.countryStatistics(binding?.searchBar?.text!!.toString())?.let { it1 ->
+            bindTheData(
+                it1
+            )
+        }
     }
     }
 
     private fun bindTheData(lastDay:VaccineData) {
-//        binding?.apply {
-//            .text = lastDay.totalPeopleVaccinated.toString()
-//            fullyVaccinated.text = lastDay.twoDoseVaccinated.toString()
-//            oneDoseVaccinated.text = lastDay.oneDoseVaccinated.toString()
-//        }
+        binding?.apply {
+            totalVaccinated.text = lastDay.totalPeopleVaccinated.toString()
+            fullyVaccinated.text = lastDay.twoDoseVaccinated.toString()
+            dailyVaccinated.text = lastDay.dailyVaccinations.toString()
+        }
     }
     private fun notFound() {
 //        binding?.apply {
 //            totalVaccinated.text = "notFound"
 //            fullyVaccinated.text = "notFound"
 //            oneDoseVaccinated.text = "notFound"
-//        }
+       }
     }
