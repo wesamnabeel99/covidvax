@@ -127,18 +127,23 @@
                         android:gravity="center"
                         android:text="Total Vaccinated"
                         android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/total_vaccinated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
                         android:gravity="center"
                         android:text="N/A"
                         android:textColor="#3F51B5"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -164,6 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
+                        android:textSize="12sp"
                         android:text="Fully Vaccinated"
                         android:textColor="@color/black"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -172,12 +178,14 @@
                         android:id="@+id/fully_vaccinated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
                         android:gravity="center"
                         android:text="N/A"
                         android:textColor="#C3DC2D2D"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -201,22 +209,25 @@
                         android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:gravity="center"
                         android:text="One Dose"
                         android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/one_dose_vaccinated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
                         android:gravity="center"
                         android:text="N/A"
                         android:textColor="#2196F3"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -275,22 +286,23 @@
                         android:id="@+id/pie_chart"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:layout_marginEnd="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/country"
-                        app:layout_constraintEnd_toStartOf="@+id/animation"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/animation"
-                        app:lottie_rawRes="@raw/evilcovid"
-                        app:lottie_loop="true"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_margin="24dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toTopOf="@+id/vaccinated_per_hundred"
+                        app:layout_constraintStart_toEndOf="@+id/country"
+                        app:layout_constraintTop_toTopOf="@+id/country"
                         app:lottie_autoPlay="true"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="32dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/evilcovid" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 

@@ -3,6 +3,7 @@ package com.example.covidvax.ui
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentSearchBinding
@@ -53,6 +54,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     }
     private fun notFound() {
         binding?.apply {
+            pieChart.isVisible=false
             totalVaccinated.text = "N/A"
             fullyVaccinated.text = "N/A"
             oneDoseVaccinated.text = "N/A"
@@ -66,6 +68,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     private fun addToPieChart(day: VaccineData) {
         binding?.apply {
+            pieChart.isVisible=true
             pieChart.clearChart()
 //            pieChart.addPieSlice(PieModel("total vaccination", day.totalPeopleVaccinated!!.toFloat(),Color.parseColor("#3F51B5")))
             pieChart.addPieSlice(PieModel("two dose vaccination", day.twoDoseVaccinated!!.toFloat(),Color.parseColor("#C3DC2D2D")))
