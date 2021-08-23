@@ -73,7 +73,7 @@ class HomeActivity : AppCompatActivity() {
      * @author Mohammed Zalzala
      */
     fun parseTheData(){
-        val inputStream = assets.open("country_vaccinations.csv")
+        val inputStream = assets.open("country_vaccinations_updated.csv")
         val buffer = BufferedReader(InputStreamReader(inputStream))
         val parser = DataParser()
         buffer.forEachLine {
