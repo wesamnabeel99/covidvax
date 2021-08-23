@@ -22,7 +22,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
 
-
     /**
      * this function will bind the data of the day into ui
      * @author Wesam N. Shawqi

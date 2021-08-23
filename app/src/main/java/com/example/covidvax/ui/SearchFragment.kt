@@ -1,12 +1,7 @@
 package com.example.covidvax.ui
 
-import android.content.Context
-import android.transition.TransitionManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import com.airbnb.lottie.LottieDrawable
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentSearchBinding
@@ -31,9 +26,9 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     private fun bindTheData(lastDay:VaccineData) {
         binding?.apply {
-            totalVaccinated.text = DataManager.roundTheNumber(lastDay.totalPeopleVaccinated!!)
-            fullyVaccinated.text = DataManager.roundTheNumber(lastDay.twoDoseVaccinated!!)
-            dailyVaccinated.text = DataManager.roundTheNumber(lastDay.dailyVaccinations!!)
+            totalVaccinated.text = DataManager.abbreviateTheNumber(lastDay.totalPeopleVaccinated!!)
+            fullyVaccinated.text = DataManager.abbreviateTheNumber(lastDay.twoDoseVaccinated!!)
+            oneDoseVaccinated.text = DataManager.abbreviateTheNumber(lastDay.oneDoseVaccinated!!)
             lastUpdateText.text = "last update on : ${lastDay.date}"
             country.text = lastDay.country.capitalize()
             vaccinatedPerHundred.text = "${lastDay.vaccinatedPerHundred}%"
@@ -57,7 +52,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         binding?.apply {
             totalVaccinated.text = "N/A"
             fullyVaccinated.text = "N/A"
-            dailyVaccinated.text = "N/A"
+            oneDoseVaccinated.text = "N/A"
             lastUpdateText.text = "N/A"
             vaccinatedPerHundred.text = ""
             country.text="not found"

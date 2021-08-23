@@ -33,8 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="16dp"
-                    android:background="#B5112AA8"
-                    >
+                    android:background="#B5112AA8" >
 
                     <TextView
                         android:id="@+id/textView7"
@@ -135,11 +134,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginTop="8dp"
                         android:text="N/A"
                         android:textColor="#3F51B5"
                         android:textSize="20sp"
-                        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -174,12 +173,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginTop="8dp"
                         android:text="N/A"
                         android:textColor="#C3DC2D2D"
                         android:textSize="20sp"
-                        app:layout_constraintTop_toBottomOf="@+id/textView12"
-                        tools:layout_editor_absoluteX="16dp" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -205,20 +203,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
-                        android:text="Daily Vaccinated"
+                        android:text="One Dose"
                         android:textColor="@color/black"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/daily_vaccinated"
+                        android:id="@+id/one_dose_vaccinated"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginTop="8dp"
                         android:text="N/A"
                         android:textColor="#2196F3"
                         android:textSize="20sp"
-                        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

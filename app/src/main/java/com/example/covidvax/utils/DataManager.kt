@@ -103,7 +103,7 @@ object DataManager {
      * @return abbreviated string of the string
      * source https://stackoverflow.com/questions/9769554/how-to-convert-number-into-k-thousands-m-million-and-b-billion-suffix-in-jsp
      */
-    fun roundTheNumber(number:Long):String {
+    fun abbreviateTheNumber(number:Long):String {
         if (number < 1000) return "" + number
         val exp = (Math.log(number.toDouble()) / Math.log(1000.0)).toInt()
         return java.lang.String.format(
