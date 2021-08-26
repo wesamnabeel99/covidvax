@@ -22,10 +22,10 @@
                 android:layout_height="190dp"
                 android:gravity="center"
                 android:text="Restaurent Overviews"
+                app:cardCornerRadius="12dp"
                 android:textColor="#232121"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:cardCornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -40,6 +40,7 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/card_view_shape"
                         app:srcCompat="@drawable/vaccination_background" />
             </androidx.cardview.widget.CardView>
 

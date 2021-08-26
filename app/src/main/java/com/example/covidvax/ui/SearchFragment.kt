@@ -7,7 +7,7 @@ import androidx.core.view.isVisible
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentSearchBinding
-import com.example.covidvax.utils.DataManager
+import com.example.covidvax.data.DataManager
 import org.eazegraph.lib.models.PieModel
 
 class SearchFragment: BaseFragment<FragmentSearchBinding>() {
@@ -17,7 +17,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     override fun addCallbacks() {
     binding?.searchButton!!.setOnClickListener {
-        val countryStatistics =DataManager.countryStatistics(binding?.searchBar?.text!!.toString().lowercase())
+        val countryStatistics = DataManager.countryStatistics(binding?.searchBar?.text!!.toString().lowercase())
         if (countryStatistics!=null) {
             bindTheData(countryStatistics)
             addToPieChart(countryStatistics)

@@ -1,8 +1,4 @@
-package com.example.covidvax.utils
-
-import android.icu.text.CompactDecimalFormat
-import com.example.covidvax.data.VaccineData
-import java.lang.Float.parseFloat
+package com.example.covidvax.data
 
 object DataManager {
     //region initialize variables

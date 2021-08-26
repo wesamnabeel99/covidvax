@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.covidvax.R
 import com.example.covidvax.databinding.ActivityHomeBinding
 import com.example.covidvax.utils.DataParser
-import com.example.covidvax.utils.DataManager
+import com.example.covidvax.data.DataManager
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
