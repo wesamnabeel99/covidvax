@@ -1,8 +1,10 @@
 package com.example.covidvax.ui
 
 import android.graphics.Color
+import android.text.method.TextKeyListener.clear
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.core.view.isVisible
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
