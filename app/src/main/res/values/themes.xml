@@ -31,4 +31,9 @@
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
+    <style name="rounded_image">
+        <item name="cornerSizeBottomLeft">12dp</item>
+        <item name="cornerSizeBottomRight">12dp</item>
+    </style>
+
 </resources>
