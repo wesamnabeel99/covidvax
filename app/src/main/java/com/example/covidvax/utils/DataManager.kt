@@ -1,14 +1,14 @@
 package com.example.covidvax.utils
 
-import android.icu.text.CompactDecimalFormat
 import com.example.covidvax.data.VaccineData
-import java.lang.Float.parseFloat
+import kotlin.math.ln
+import kotlin.math.pow
 
 object DataManager {
     //region initialize variables
-    val daysList = mutableListOf<VaccineData>()
-    val countriesSet = mutableSetOf<String>() // sets don't allow duplication so we use it to store countries names
-    val countriesMap = mutableMapOf<String,MutableList<VaccineData>>()
+    private val daysList = mutableListOf<VaccineData>()
+    private val countriesSet = mutableSetOf<String>() // sets don't allow duplication so we use it to store countries names
+    private val countriesMap = mutableMapOf<String,MutableList<VaccineData>>()
     //endregion
 
     //region data initialization
@@ -32,9 +32,9 @@ object DataManager {
      * @return Unit
      * @author  Wesam N. Shawqi
      */
-    fun mapTheData () {
+     fun mapTheData () {
         countriesSet.forEach() {
-            countriesMap.put (it.lowercase(), filterListByCountry(it))
+            countriesMap[it.lowercase()] = filterListByCountry(it)
         }
     }
     /**
@@ -51,7 +51,7 @@ object DataManager {
      * @return the last statistics as an object for the given country
      * @author  Wesam N. Shawqi, Karrar Mohammed
      */
-    fun countryStatistics (country: String): VaccineData? {
+    fun calculateCountryStatistics (country: String): VaccineData? {
         if (country in countriesMap.keys) {
             return VaccineData(
                 country = country,
@@ -72,13 +72,13 @@ object DataManager {
      * @return the total statistics as an object for the world
      * @author  Wesam N. Shawqi, Karrar M. Habeeb
      */
-    fun worldStatistics(): VaccineData? {
+    fun calculateWorldStatistics(): VaccineData {
         var worldTotalVaccinations: Long = 0
         var worldOneDoseVaccination: Long = 0
         var worldTwoDoseVaccination: Long = 0
         var averageVaccinatedPerHundred:Double=0.0
         countriesMap.forEach {
-            val countryData = countryStatistics(it.key)
+            val countryData = calculateCountryStatistics(it.key)
             worldTotalVaccinations += countryData?.totalPeopleVaccinated!!
             worldOneDoseVaccination += countryData.oneDoseVaccinated!!
             worldTwoDoseVaccination += countryData.twoDoseVaccinated!!
@@ -105,13 +105,12 @@ object DataManager {
      */
     fun abbreviateTheNumber(number:Long):String {
         if (number < 1000) return "" + number
-        val exp = (Math.log(number.toDouble()) / Math.log(1000.0)).toInt()
+        val exp = (ln(number.toDouble()) / ln(1000.0)).toInt()
         return java.lang.String.format(
             "%.1f %c", //format the apperance of the number
-            number / Math.pow(1000.0, exp.toDouble()),
+            number / 1000.0.pow(exp.toDouble()),
             "kMB"[exp - 1]
         )
     }
-
         //endregion
 }

@@ -3,7 +3,7 @@ package com.example.covidvax.utils
 import com.example.covidvax.data.VaccineData
 
 class DataParser {
-    fun parsing(line:String):VaccineData{
+    fun parseTheData(line:String):VaccineData{
     val token = line.split(",")
     return VaccineData(
         country = token[Constants.ColumnIndex.COUNTRY],

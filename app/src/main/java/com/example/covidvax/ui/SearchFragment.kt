@@ -17,12 +17,12 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     override fun addCallbacks() {
     binding?.searchButton!!.setOnClickListener {
-        val countryStatistics =DataManager.countryStatistics(binding?.searchBar?.text!!.toString().lowercase())
+        val countryStatistics =DataManager.calculateCountryStatistics(binding?.searchBar?.text.toString().lowercase())
         if (countryStatistics!=null) {
             bindTheData(countryStatistics)
             addToPieChart(countryStatistics)
         } else {
-            notFound()
+            showNotFoundStatus()
         }
 
     }
@@ -36,23 +36,11 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             lastUpdateText.text = "last update on : ${lastDay.date}"
             country.text = lastDay.country.capitalize()
             vaccinatedPerHundred.text = "${lastDay.vaccinatedPerHundred}%"
-            when {
-                lastDay.vaccinatedPerHundred!!<30.0 -> {
-                    animation.setAnimation(R.raw.belowthirty)
-                    animation.playAnimation()
-                }
-                lastDay.vaccinatedPerHundred>=30.0&&lastDay.vaccinatedPerHundred<70.0 -> {
-                    animation.setAnimation(R.raw.vaccinating)
-                    animation.playAnimation()
-                }
-                else -> {
-                    animation.setAnimation(R.raw.fullyvaccinated)
-                    animation.playAnimation()
-                }
-            }
+            playAnimation(lastDay)
+
         }
     }
-    private fun notFound() {
+    private fun showNotFoundStatus() {
         binding?.apply {
             pieChart.isVisible=false
             totalVaccinated.text = "N/A"
@@ -61,7 +49,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             lastUpdateText.text = "N/A"
             vaccinatedPerHundred.text = ""
             country.text="not found"
-            animation!!.setAnimation(R.raw.notfound)
+            animation.setAnimation(R.raw.notfound)
             animation.playAnimation()
         }
     }
@@ -74,6 +62,23 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             pieChart.addPieSlice(PieModel("two dose vaccination", day.twoDoseVaccinated!!.toFloat(),Color.parseColor("#C3DC2D2D")))
             pieChart.addPieSlice(PieModel("one dose vaccination", day.oneDoseVaccinated!!.toFloat(),Color.parseColor("#2196F3")))
             pieChart.startAnimation()
+        }
+    }
+
+    private fun playAnimation(lastDay :VaccineData) {
+        when {
+            lastDay.vaccinatedPerHundred!!<30.0 -> {
+                binding?.animation?.setAnimation(R.raw.belowthirty)
+                binding?.animation?.playAnimation()
+            }
+            lastDay.vaccinatedPerHundred>=30.0&&lastDay.vaccinatedPerHundred<70.0 -> {
+                binding?.animation?.setAnimation(R.raw.vaccinating)
+                binding?.animation?.playAnimation()
+            }
+            else -> {
+                binding?.animation?.setAnimation(R.raw.fullyvaccinated)
+                binding?.animation?.playAnimation()
+            }
         }
     }
 }

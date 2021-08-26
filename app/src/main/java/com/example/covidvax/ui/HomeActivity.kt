@@ -62,7 +62,6 @@ class HomeActivity : AppCompatActivity() {
                 }
                 else -> false
             }
-
         }
     }
 
@@ -72,12 +71,12 @@ class HomeActivity : AppCompatActivity() {
      * open the file and parse the data
      * @author Mohammed Zalzala
      */
-    fun parseTheData(){
+    private fun parseTheData(){
         val inputStream = assets.open("country_vaccinations_updated.csv")
         val buffer = BufferedReader(InputStreamReader(inputStream))
         val parser = DataParser()
         buffer.forEachLine {
-            val day = parser.parsing(it)
+            val day = parser.parseTheData(it)
             DataManager.addDay(day)
         }
         DataManager.mapTheData()
