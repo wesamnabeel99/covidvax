@@ -10,7 +10,8 @@ object DataManager {
     val countriesSet = mutableSetOf<String>() // sets don't allow duplication so we use it to store countries names
     val countriesMap = mutableMapOf<String,MutableList<VaccineData>>()
     //endregion
-
+    val vaccineListData: List<VaccineData>
+    get() = daysList
     //region data initialization
     /**
      * this function will add day data to the daysList and add country name to the countriesSet
