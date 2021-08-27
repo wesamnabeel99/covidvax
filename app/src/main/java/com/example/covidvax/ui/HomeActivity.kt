@@ -1,7 +1,15 @@
 package com.example.covidvax.ui
 
+import android.annotation.SuppressLint
+import android.app.Dialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.Window
+import android.widget.Button
+import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.covidvax.R
 import com.example.covidvax.databinding.ActivityHomeBinding
@@ -18,16 +26,23 @@ class HomeActivity : AppCompatActivity() {
     private val dataFragment = DataFragment()
     private val aboutFragment = AboutFragment()
     lateinit var binding: ActivityHomeBinding
+    internal lateinit var btn_pfizer: Button
+    internal lateinit var MyDialog: Dialog
+
     //endregion
 
     //region onCreate
+    @SuppressLint("ResourceType", "WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Covidvax)
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        vaccineInfo()
         setup()
     }
+
+
     //endregion
 
     //region setup
@@ -39,6 +54,20 @@ class HomeActivity : AppCompatActivity() {
         addFragment(homeFragment)
         addNavigationListner()
         parseTheData()
+    }
+
+    private fun vaccineInfo() {
+        btn_pfizer = findViewById(R.id.test1)
+        btn_pfizer.setOnClickListener { showDialog() }
+
+    }
+
+    private fun showDialog() {
+        MyDialog = Dialog(this)
+        MyDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        MyDialog.setContentView(R.layout.pfizer)
+        MyDialog.setTitle("Pfizer")
+        MyDialog.show()
     }
 
     private fun addNavigationListner() {

@@ -19,6 +19,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun addCallbacks() {
         val world = DataManager.worldStatistics()
         bindDay(world!!)
+
     }
 
 
