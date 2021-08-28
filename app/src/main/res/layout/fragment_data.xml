@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/orange_team_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tajawalbold"
@@ -17,26 +17,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/basheer_image_view"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="@+id/orange_team_text_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/orange_team_text_view" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/karrrar_image_view"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:rotation="180"
         android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="@+id/orange_team_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/orange_team_text_view" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/wesam_name_text_view"
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,29 +44,29 @@
         android:text="Iraq"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/orange_team_text_view" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/wesam_nabeel_image_view"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/wesam_name_text_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/wesam_name_text_view" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/moe_image_view"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:rotation="180"
         android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/wesam_name_text_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="@+id/wesam_name_text_view" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/wesam_team_leader_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffc033"
@@ -75,10 +75,10 @@
         android:fontFamily="@font/tajawalbold"
         android:text="vaccinated on this day : "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/moe_image_view" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/karrar_name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -87,7 +87,7 @@
         android:fontFamily="@font/tajawalbold"
         android:text="Total Vaccinated : "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/wesam_team_leader_text_view" />
 
     <TextView
         android:layout_width="match_parent"
@@ -98,5 +98,5 @@
         android:background="#ffc033"
         android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/karrar_name_text_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

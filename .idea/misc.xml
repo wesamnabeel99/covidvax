@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/coax/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/User/coax/app/src/main/res/layout/fragment_about.xml" value="0.1" />
+        <entry key="..\:/Users/User/coax/app/src/main/res/layout/fragment_search.xml" value="0.16987740805604204" />
         <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/covaxapp/app/src/main/res/drawable/backgroundimg1.xml" value="0.14375" />
         <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/covaxapp/app/src/main/res/drawable/ic_baseline_data_usage_24.xml" value="0.14427083333333332" />
         <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/covaxapp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.14427083333333332" />

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:scrollable="true">
+   >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,22 +14,18 @@
         android:padding="8dp">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/orange_logo"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:layout_marginStart="164dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="139dp"
             android:src="@drawable/orangelogo"
             app:shapeAppearanceOverlay="@style/circular"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/orange_team_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
@@ -38,283 +34,272 @@
             android:textColor="#298103"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.546"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView1" />
+            app:layout_constraintTop_toBottomOf="@id/orange_logo" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/wesam_nabeel_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/wesam"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.553"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintTop_toBottomOf="@id/orange_team_text_view"
             app:shapeAppearanceOverlay="@style/circular"/>
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/wesam_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
             android:text="Wesam N.Shawqi"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@id/imageView2"
-            app:layout_constraintHorizontal_bias="0.464"
-            app:layout_constraintStart_toStartOf="@id/imageView2"
-            app:layout_constraintTop_toBottomOf="@id/imageView2"/>
+            app:layout_constraintEnd_toEndOf="@id/wesam_nabeel_image_view"
+            app:layout_constraintStart_toStartOf="@id/wesam_nabeel_image_view"
+            app:layout_constraintTop_toBottomOf="@id/wesam_nabeel_image_view"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/wesam_team_leader_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Leader"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@id/textView2"
-            app:layout_constraintHorizontal_bias="0.483"
-            app:layout_constraintStart_toStartOf="@id/textView2"
-            app:layout_constraintTop_toBottomOf="@id/textView2" />
+            app:layout_constraintEnd_toEndOf="@id/wesam_name_text_view"
+            app:layout_constraintStart_toStartOf="@id/wesam_name_text_view"
+            app:layout_constraintTop_toBottomOf="@id/wesam_name_text_view" />
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/karrrar_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/karrar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView3"
+            app:layout_constraintTop_toBottomOf="@id/wesam_team_leader_text_view"
             app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/karrar_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
             android:text="Karrar Mohammed"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@id/imageView3"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/imageView3"
-            app:layout_constraintTop_toBottomOf="@id/imageView4" />
+            app:layout_constraintEnd_toEndOf="@id/karrrar_image_view"
+            app:layout_constraintStart_toStartOf="@id/karrrar_image_view"
+            app:layout_constraintTop_toBottomOf="@id/moe_image_view" />
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/karrar_team_member_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Member"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView4"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintEnd_toEndOf="@+id/karrar_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/karrar_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/karrar_name_text_view" />
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/moe_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="56dp"
             android:src="@drawable/mohammed"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/karrrar_image_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/karrrar_image_view"
+            app:layout_constraintTop_toTopOf="@+id/karrrar_image_view"
             app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/moe_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
             android:text="Moe Zalzala"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/textView4" />
+            app:layout_constraintEnd_toEndOf="@+id/moe_image_view"
+            app:layout_constraintStart_toStartOf="@+id/moe_image_view"
+            app:layout_constraintTop_toTopOf="@+id/karrar_name_text_view" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/moe_team_member_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Member"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView7"
-            app:layout_constraintStart_toStartOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintEnd_toEndOf="@+id/moe_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/moe_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/moe_name_text_view" />
+
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/hawraa_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/hawraa"
-            app:layout_constraintEnd_toEndOf="@+id/imageView3"
-            app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="@+id/karrrar_image_view"
+            app:layout_constraintStart_toStartOf="@+id/karrrar_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/karrar_team_member_text_view"
             app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/hawraa_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
             android:text="Hawraa Alsafi"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            app:layout_constraintEnd_toEndOf="@+id/hawraa_image_view"
+            app:layout_constraintStart_toStartOf="@+id/hawraa_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/hawraa_image_view" />
+
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/hawraa_team_member_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Member"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView9"
-            app:layout_constraintStart_toStartOf="@+id/textView9"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintEnd_toEndOf="@+id/hawraa_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/hawraa_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/hawraa_name_text_view" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/abdullah_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/abdullah"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/imageView4"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="@+id/hawraa_image_view"
+            app:layout_constraintEnd_toEndOf="@+id/moe_image_view"
+            app:layout_constraintStart_toStartOf="@+id/moe_image_view"
+            app:layout_constraintTop_toTopOf="@+id/hawraa_image_view"
             app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/abdullah_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
             android:text="Abduallah Alaa"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView8"
-            app:layout_constraintHorizontal_bias="0.652"
-            app:layout_constraintStart_toStartOf="@+id/imageView8"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+            app:layout_constraintEnd_toEndOf="@+id/abdullah_image_view"
+            app:layout_constraintStart_toStartOf="@+id/abdullah_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/abdullah_image_view" />
 
         <TextView
-            android:id="@+id/textView26"
+            android:id="@+id/abdullah_team_member_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Member"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView25"
-            app:layout_constraintStart_toStartOf="@+id/textView25"
-            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+            app:layout_constraintEnd_toEndOf="@+id/abdullah_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/abdullah_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/abdullah_name_text_view" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView13"
+            android:id="@+id/akram_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginTop="33dp"
             android:src="@drawable/akram"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-            app:layout_constraintEnd_toEndOf="@+id/imageView8"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/basheer_image_view"
+            app:layout_constraintEnd_toEndOf="@+id/abdullah_image_view"
+            app:layout_constraintStart_toStartOf="@+id/abdullah_image_view"
+            app:layout_constraintTop_toTopOf="@+id/hawraa_team_member_text_view"
             app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/akram_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
             android:text="Akram Talib"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView13"
-            app:layout_constraintHorizontal_bias="0.652"
-            app:layout_constraintStart_toStartOf="@+id/imageView13"
-            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+            app:layout_constraintEnd_toEndOf="@+id/akram_image_view"
+            app:layout_constraintStart_toStartOf="@+id/akram_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/akram_image_view" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/akram_team_member_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Member"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView12"
-            app:layout_constraintStart_toStartOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintEnd_toEndOf="@+id/akram_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/akram_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/akram_name_text_view" />
              app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView"
+            android:id="@+id/basheer_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/basher"
-            app:layout_constraintEnd_toEndOf="@+id/imageView5"
-            app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="@+id/hawraa_image_view"
+            app:layout_constraintStart_toStartOf="@+id/hawraa_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/hawraa_team_member_text_view"
 
             app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/basheer_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
-            android:text="BaSher Sameer"
+            android:text="Basheer Sameer"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.652"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintEnd_toEndOf="@+id/basheer_image_view"
+            app:layout_constraintStart_toStartOf="@+id/basheer_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/basheer_image_view" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/basheer_team_member_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Member"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView23"
-            app:layout_constraintStart_toStartOf="@+id/textView23"
-            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+            app:layout_constraintEnd_toEndOf="@+id/basheer_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/basheer_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/basheer_name_text_view" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/image"
+            android:id="@+id/mohammed_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="140dp"
             android:src="@drawable/mohamed"
-            app:layout_constraintBUTTOM_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parents"
-            app:layout_constraintHorizontal_bias="0.554"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/akram_image_view"
+            app:layout_constraintStart_toEndOf="@+id/basheer_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/akram_name_text_view"
             app:shapeAppearanceOverlay="@style/circular" />
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/mohammed_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalbold"
-            android:text="mohammed Ali"
+            android:text="Mohammed Ali"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/image"
-            app:layout_constraintHorizontal_bias="0.652"
-            app:layout_constraintStart_toStartOf="@+id/image"
-            app:layout_constraintTop_toBottomOf="@+id/image" />
+            app:layout_constraintEnd_toEndOf="@+id/mohammed_image_view"
+            app:layout_constraintStart_toStartOf="@+id/mohammed_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/mohammed_image_view" />
 
         <TextView
-            android:id="@+id/last_update_text"
+            android:id="@+id/mohammed_team_member_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawalreqular"
             android:text="Team Member"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/text"
-            app:layout_constraintStart_toStartOf="@+id/text"
-            app:layout_constraintTop_toBottomOf="@+id/text" />
+            app:layout_constraintEnd_toEndOf="@+id/mohammed_name_text_view"
+            app:layout_constraintStart_toStartOf="@+id/mohammed_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/mohammed_name_text_view" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
