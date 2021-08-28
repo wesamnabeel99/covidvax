@@ -13,4 +13,8 @@ class AboutFragment: BaseFragment<FragmentAboutBinding>() {
     override fun addCallbacks() {
         //write your callbacks code here
     }
+
+    override fun setup() {
+        TODO("Not yet implemented")
+    }
 }

@@ -76,4 +76,8 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             pieChart.startAnimation()
         }
     }
+
+    override fun setup() {
+
+    }
 }
