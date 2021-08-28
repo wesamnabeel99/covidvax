@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="8dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    app:layoutDescription="@xml/fragment_about_scene">
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
+        android:src="@drawable/logoteam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/logoteam"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -23,8 +24,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/tajawalbold"
         android:padding="8dp"
-        android:textColor="#298103"
         android:text="Orange Team"
+        android:textColor="#298103"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,8 +35,8 @@
         android:id="@+id/imageView8"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/wesam"
         android:layout_marginTop="24dp"
+        android:src="@drawable/wesam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
@@ -127,7 +128,7 @@
         android:fontFamily="@font/tajawalreqular"
         android:text="Team Member"
         android:textSize="12sp"
-      app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="@+id/textView19"
         app:layout_constraintStart_toStartOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -200,4 +201,4 @@
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
