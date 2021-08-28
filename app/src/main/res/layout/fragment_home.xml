@@ -25,13 +25,13 @@
                 android:textColor="#232121"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:cardCornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
 
-                    <ImageView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        app:shapeAppearanceOverlay="@style/rounded_image"
                         android:id="@+id/home_fragment_background"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

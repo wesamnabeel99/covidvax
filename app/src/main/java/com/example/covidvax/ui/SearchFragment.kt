@@ -1,31 +1,23 @@
 package com.example.covidvax.ui
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentSearchBinding
-import com.example.covidvax.utils.DataManager
+import com.example.covidvax.data.DataManager
 import org.eazegraph.lib.models.PieModel
 
-class SearchFragment: BaseFragment<FragmentSearchBinding>() {
+class SearchFragment: BaseFragment<FragmentSearchBinding>(), SearchView.OnQueryTextListener {
     override val LOG_TAG: String = "SEARCH_FRAGMENT"
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSearchBinding = FragmentSearchBinding::inflate
-
     override fun addCallbacks() {
-    binding?.searchButton!!.setOnClickListener {
-        val countryStatistics =DataManager.countryStatistics(binding?.searchBar?.text!!.toString().lowercase())
-        if (countryStatistics!=null) {
-            bindTheData(countryStatistics)
-            addToPieChart(countryStatistics)
-        } else {
-            notFound()
-        }
-
-    }
+    binding?.searchBar!!.setOnQueryTextListener(this)
     }
 
     private fun bindTheData(lastDay:VaccineData) {
@@ -76,4 +68,21 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             pieChart.startAnimation()
         }
     }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        val countryStatistics = DataManager.countryStatistics(binding?.searchBar?.query!!.toString().lowercase())
+        if (countryStatistics!=null) {
+            bindTheData(countryStatistics)
+            addToPieChart(countryStatistics)
+        } else {
+            notFound()
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        return true
+    }
+
+
 }

@@ -1,12 +1,11 @@
 package com.example.covidvax.ui
 
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentHomeBinding
-import com.example.covidvax.utils.DataManager
+import com.example.covidvax.data.DataManager
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
