@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covidvax.R
-import com.example.covidvax.data.VaccineData
+import com.example.covidvax.data.domain.VaccineData
 import com.example.covidvax.ui.viewholdres.VaccineHolder
 
 class VaccineAdapter(val list: List<VaccineData>) : RecyclerView.Adapter<VaccineHolder>(){

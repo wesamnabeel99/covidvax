@@ -1,9 +1,9 @@
 package com.example.covidvax.utils
 
-import com.example.covidvax.data.VaccineData
+import com.example.covidvax.data.domain.VaccineData
 
 class DataParser {
-    fun parsing(line:String):VaccineData{
+    fun parsing(line:String): VaccineData {
     val token = line.split(",")
     return VaccineData(
         country = token[Constants.ColumnIndex.COUNTRY],

@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.Window
 import com.example.covidvax.R
-import com.example.covidvax.data.VaccineData
+import com.example.covidvax.data.domain.VaccineData
 import com.example.covidvax.databinding.FragmentHomeBinding
 import com.example.covidvax.data.DataManager
 
@@ -35,13 +35,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     binding?.reasonsToVaccinate?.setOnClickListener { showDialog(R.layout.why_you_should_vaccine) }
     }
     /**
-     * dialog function
+     * this function shows the dialog for given layout
+     * @param layoutId an Int representing the layout id
+     * @return Unit
      * @author Akram
      */
-    fun showDialog(vac: Int) {
+    fun showDialog(layoutId: Int) {
         MyDialog = Dialog(requireContext())
         MyDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        MyDialog.setContentView(vac)
+        MyDialog.setContentView(layoutId)
         MyDialog.show()
     }
 
@@ -52,7 +54,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
      * @param data, an object from the DailyData class
      * @return nothing
      */
-    private fun bindDay (data:VaccineData) {
+    private fun bindDay (data: VaccineData) {
         binding?.apply {
             firstDataView.text = "One Dose Vaccinated : ${DataManager.abbreviateTheNumber(data.oneDoseVaccinated!!)}"
             secondDataView.text = "two Dose Vaccinated : ${DataManager.abbreviateTheNumber(data.twoDoseVaccinated!!)}"
@@ -62,8 +64,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-    override fun setup() {
-        TODO("Not yet implemented")
-    }
 //endregion
 }

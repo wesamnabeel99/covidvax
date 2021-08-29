@@ -1,4 +1,4 @@
-package com.example.covidvax.data
+package com.example.covidvax.data.domain
 
 data class VaccineData(
     val country:String,

@@ -1,13 +1,12 @@
 package com.example.covidvax.ui
 
 import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import com.example.covidvax.R
-import com.example.covidvax.data.VaccineData
+import com.example.covidvax.data.domain.VaccineData
 import com.example.covidvax.databinding.FragmentSearchBinding
 import com.example.covidvax.data.DataManager
 import org.eazegraph.lib.models.PieModel
@@ -20,7 +19,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>(), SearchView.OnQueryT
     binding?.searchBar!!.setOnQueryTextListener(this)
     }
 
-    private fun bindTheData(lastDay:VaccineData) {
+    private fun bindTheData(lastDay: VaccineData) {
         binding?.apply {
             totalVaccinated.text = DataManager.abbreviateTheNumber(lastDay.totalPeopleVaccinated!!)
             fullyVaccinated.text = DataManager.abbreviateTheNumber(lastDay.twoDoseVaccinated!!)

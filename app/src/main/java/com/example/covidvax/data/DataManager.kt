@@ -1,5 +1,7 @@
 package com.example.covidvax.data
 
+import com.example.covidvax.data.domain.VaccineData
+
 object DataManager {
     //region initialize variables
     val daysList = mutableListOf<VaccineData>()
@@ -16,7 +18,7 @@ object DataManager {
      * @return Unit
      * @author Mohammed Zalzala , Wesam N. Shawqi
      */
-    fun addDay (vaccineData:VaccineData) {
+    fun addDay (vaccineData: VaccineData) {
         daysList.add(vaccineData)
         countriesSet.add(vaccineData.country)
     }

@@ -40,7 +40,6 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
 
     //region abstract functions
     abstract fun addCallbacks()
-    abstract fun setup()
     //endregion
 
     protected fun log(value: String){
