@@ -25,7 +25,18 @@ class DataFragment: BaseFragment<FragmentDataBinding>() {
 
     override fun addCallbacks() {
         getData()
+        binding!!.fullyVaccinatedChip.setOnClickListener {
+            TODO("no implemented yet")
+        }
+        binding!!.oneDoseVaccinatedChip.setOnClickListener {
+            TODO("no implemented yet")
+        }
+        binding!!.twoDoseVaccinatedChip.setOnCloseIconClickListener {
+            TODO("no implemented yet")
+        }
     }
+
+
 
     override fun setup(){
 
