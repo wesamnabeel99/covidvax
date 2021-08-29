@@ -1,12 +1,13 @@
 package com.example.covidvax.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.covidvax.R
 import com.example.covidvax.databinding.ActivityHomeBinding
 import com.example.covidvax.utils.DataParser
-import com.example.covidvax.utils.DataManager
+import com.example.covidvax.data.DataManager
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -18,9 +19,11 @@ class HomeActivity : AppCompatActivity() {
     private val dataFragment = DataFragment()
     private val aboutFragment = AboutFragment()
     lateinit var binding: ActivityHomeBinding
+
     //endregion
 
     //region onCreate
+    @SuppressLint("ResourceType", "WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Covidvax)
         super.onCreate(savedInstanceState)
@@ -28,6 +31,8 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         setup()
     }
+
+
     //endregion
 
     //region setup
@@ -103,6 +108,7 @@ class HomeActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,fragment)
+        transaction.addToBackStack(null)
         transaction.commit()
     }
     //endregion

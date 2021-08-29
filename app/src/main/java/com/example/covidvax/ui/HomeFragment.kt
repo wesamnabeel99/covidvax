@@ -1,12 +1,14 @@
 package com.example.covidvax.ui
 
 
-import android.os.Bundle
+import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.Window
+import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentHomeBinding
-import com.example.covidvax.utils.DataManager
+import com.example.covidvax.data.DataManager
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -15,13 +17,33 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) ->
     FragmentHomeBinding = FragmentHomeBinding::inflate
 
+
+
 //region callbacks
     override fun addCallbacks() {
         val world = DataManager.worldStatistics()
         bindDay(world!!)
+
+    /**
+     * open popup dialog
+     * @author Akram
+     */
+    binding?.pfizerCard?.setOnClickListener{showDialog(R.layout.pfizer)}
+    binding?.modernaCard?.setOnClickListener{showDialog(R.layout.moderna)}
+    binding?.johnsonCard?.setOnClickListener{showDialog(R.layout.johnson)}
+    binding?.sputnikCard?.setOnClickListener{showDialog(R.layout.sputnik)}
+    binding?.reasonsToVaccinate?.setOnClickListener { showDialog(R.layout.why_you_should_vaccine) }
     }
-
-
+    /**
+     * dialog function
+     * @author Akram
+     */
+    fun showDialog(vac: Int) {
+        MyDialog = Dialog(requireContext())
+        MyDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        MyDialog.setContentView(vac)
+        MyDialog.show()
+    }
 
 
     /**
