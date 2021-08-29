@@ -5,19 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/test1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="test" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="٠dp"
-        tools:layout_editor_absoluteY="٧٧dp">
+        tools:layout_editor_absoluteY="٢٠٤dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -200,12 +194,11 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:id="@+id/modernaa_img"
+                        android:layout_width="70dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/syrenge_teal"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -213,21 +206,23 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginBottom="16dp"
+                        android:gravity="center"
                         android:text="Moderna"
+                        android:elevation="100dp"
                         android:textColor="#fff"
-
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintEnd_toEndOf="@+id/modernaa_img"
+                        app:layout_constraintStart_toStartOf="@+id/modernaa_img"
+                        app:layout_constraintTop_toBottomOf="@+id/modernaa_img" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView6"
+                android:id="@+id/pfizer_card"
                 android:layout_width="170dp"
                 android:layout_height="150dp"
                 android:layout_marginStart="16dp"
@@ -243,12 +238,11 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/pfizer_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:id="@+id/pfizer_img"
+                        android:layout_width="70dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/syrenge_purple"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/syrenge_teal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -256,14 +250,15 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginBottom="16dp"
                         android:text="Pfizer"
+                        android:gravity="center"
                         android:textColor="#fff"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintEnd_toEndOf="@+id/pfizer_img"
+                        app:layout_constraintStart_toStartOf="@+id/pfizer_img" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -283,12 +278,11 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:id="@+id/johnson_img"
+                        android:layout_width="70dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/syrenge_pink"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/syrenge_teal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -296,14 +290,15 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginBottom="16dp"
                         android:text="Johnson"
+                        android:gravity="center"
                         android:textColor="#fff"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintEnd_toEndOf="@+id/johnson_img"
+                        app:layout_constraintStart_toStartOf="@+id/johnson_img" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
@@ -323,12 +318,11 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:id="@+id/sputnik_img"
+                        android:layout_width="70dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/syrenge_blue"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/syrenge_teal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -336,14 +330,15 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginBottom="16dp"
-                        android:text="Spotink"
+                        android:gravity="center"
+                        android:text="Sputnik"
                         android:textColor="#fff"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintEnd_toEndOf="@+id/sputnik_img"
+                        app:layout_constraintStart_toStartOf="@+id/sputnik_img" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>

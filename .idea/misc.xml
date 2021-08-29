@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/drawable/splash_theme.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/activity_home.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/fragment_home.xml" value="0.33" />
-        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/fragment_search.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/pfizer.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/menu/main_bottom_navigation_bar.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/fragment_about.xml" value="0.2015625" />
+        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/fragment_home.xml" value="0.36517412935323385" />
+        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/fragment_search.xml" value="0.2015625" />
+        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/johnson.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/moderna.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/pfizer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Akram/StudioProjects/covidvax1/app/src/main/res/layout/spotink.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/covaxapp/app/src/main/res/drawable/backgroundimg1.xml" value="0.14375" />
         <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/covaxapp/app/src/main/res/drawable/ic_baseline_data_usage_24.xml" value="0.14427083333333332" />
         <entry key="..\:/Users/Wesam Nabeel/AndroidStudioProjects/covaxapp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.14427083333333332" />
