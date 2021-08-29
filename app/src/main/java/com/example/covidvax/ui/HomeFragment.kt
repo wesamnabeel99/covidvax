@@ -8,7 +8,7 @@ import android.view.Window
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentHomeBinding
-import com.example.covidvax.utils.DataManager
+import com.example.covidvax.data.DataManager
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
