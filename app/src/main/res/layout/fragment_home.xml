@@ -69,7 +69,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="one dose vaccination: "
-                        android:textColor="#ff00cc"
+                        android:textColor="@color/pink"
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -157,7 +157,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:text="10 Reasons To get vaccinated."
+                        android:text="Why We Vaccine?"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -190,6 +190,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView2">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/moderna_card"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -274,6 +275,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/johnson_card"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -314,6 +316,7 @@
                 app:layout_constraintTop_toTopOf="@+id/cardView7">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/sputnik_card"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 

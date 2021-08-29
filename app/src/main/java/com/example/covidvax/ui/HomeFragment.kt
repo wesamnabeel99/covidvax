@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.Window
-import androidx.constraintlayout.widget.ConstraintSet
 import com.example.covidvax.R
 import com.example.covidvax.data.VaccineData
 import com.example.covidvax.databinding.FragmentHomeBinding
@@ -29,11 +28,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
      * open popup dialog
      * @author Akram
      */
-    binding?.pfizerImg?.setOnClickListener{showDialog(R.layout.pfizer)}
-    binding?.modernaaImg?.setOnClickListener{showDialog(R.layout.moderna)}
-    binding?.johnsonImg?.setOnClickListener{showDialog(R.layout.johnson)}
-    binding?.sputnikImg?.setOnClickListener{showDialog(R.layout.sputnik)}
-
+    binding?.pfizerCard?.setOnClickListener{showDialog(R.layout.pfizer)}
+    binding?.modernaCard?.setOnClickListener{showDialog(R.layout.moderna)}
+    binding?.johnsonCard?.setOnClickListener{showDialog(R.layout.johnson)}
+    binding?.sputnikCard?.setOnClickListener{showDialog(R.layout.sputnik)}
+    binding?.reasonsToVaccinate?.setOnClickListener { showDialog(R.layout.why_you_should_vaccine) }
     }
     /**
      * dialog function

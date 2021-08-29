@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
     android:layout_height="420dp"
     android:layout_gravity="center"
-    android:background="@color/brand"
+    android:background="#FF0077"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
     >
 
 
@@ -43,11 +47,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:padding="20dp"
-        android:text="The Janssen COVID-19 vaccine or Johnson - Johnson COVID-19 vaccine is a COVID-19 vaccine that was developed by Janssen Vaccines in Leiden, Netherlands, and its Belgian parent company Janssen Pharmaceuticals,[22] subsidiary of American company Johnson - Johnson.
-"
+        android:text="@string/johnson_text"
         android:textSize="18sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/johnson_title"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

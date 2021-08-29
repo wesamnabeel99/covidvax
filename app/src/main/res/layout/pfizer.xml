@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
     android:layout_height="420dp"
     android:layout_gravity="center"
-    android:background="@color/brand"
+    android:background="#8554C1"
+    >
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     >
 
 
@@ -32,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11"
+        app:layout_constraintVertical_bias="0.1"
         tools:ignore="MissingConstraints"
         android:textColor="@color/white"
         />
@@ -43,11 +50,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:padding="20dp"
-        android:text="In March 2020, as the scale of the COVID-19 pandemic became apparent, Pfizer partnered with BioNTech to study and develop COVID-19 mRNA vaccine candidates. Unlike many of its competitors, Pfizer took no initial research funds from the United States' Operation Warp Speed vaccine development program, instead choosing to invest roughly $2 billion of its own funds.
-"
+        android:text="@string/pfizer_text"
         android:textSize="18sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/pfizer_title"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

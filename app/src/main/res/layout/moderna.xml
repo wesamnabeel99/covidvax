@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
     android:layout_height="420dp"
     android:layout_gravity="center"
-    android:background="@color/brand"
+    android:background="#3AC58D"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     >
 
 
@@ -43,11 +49,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
         android:padding="20dp"
-        android:text="The Moderna COVID‑19 vaccine (pINN: elasomeran), codenamed mRNA-1273 and sold under the brand name Spikevax, is a COVID-19 vaccine developed by Moderna, the United States National Institute of Allergy and Infectious Diseases (NIAID) and the Biomedical Advanced Research and Development Authority (BARDA)
-"
+        android:text="@string/moderna_text"
         android:textSize="18sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/moderna_title"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
