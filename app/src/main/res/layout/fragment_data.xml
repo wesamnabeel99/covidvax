@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/modernaa_img"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
@@ -56,7 +56,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/johnson_img"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:rotation="180"
@@ -75,7 +75,7 @@
         android:fontFamily="@font/tajawalbold"
         android:text="vaccinated on this day : "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/johnson_img" />
 
     <TextView
         android:id="@+id/textView4"
