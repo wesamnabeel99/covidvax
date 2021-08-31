@@ -8,6 +8,7 @@ import com.example.covidvax.R
 import com.example.covidvax.databinding.ActivityHomeBinding
 import com.example.covidvax.utils.DataParser
 import com.example.covidvax.data.DataManager
+import com.example.covidvax.data.domain.VaccineData
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -81,11 +82,14 @@ class HomeActivity : AppCompatActivity() {
         val inputStream = assets.open("country_vaccinations_updated.csv")
         val buffer = BufferedReader(InputStreamReader(inputStream))
         val parser = DataParser()
+
         buffer.forEachLine {
             val day = parser.parsing(it)
             DataManager.addDay(day)
+
         }
         DataManager.mapTheData()
+        DataManager.calculateCountryTotal()
     }
     //endregion
 
