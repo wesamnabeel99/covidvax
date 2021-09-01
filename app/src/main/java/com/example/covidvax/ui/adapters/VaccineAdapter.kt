@@ -7,7 +7,7 @@ import com.example.covidvax.R
 import com.example.covidvax.data.domain.VaccineData
 import com.example.covidvax.ui.viewholdres.VaccineHolder
 
-class VaccineAdapter(val list: List<VaccineData>) : RecyclerView.Adapter<VaccineHolder>(){
+class VaccineAdapter(val list: List<VaccineData?>) : RecyclerView.Adapter<VaccineHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VaccineHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_vaccine,parent,false)
         return VaccineHolder(itemView)
@@ -17,12 +17,11 @@ class VaccineAdapter(val list: List<VaccineData>) : RecyclerView.Adapter<Vaccine
 
     override fun onBindViewHolder(holder: VaccineHolder, position: Int) {
         val currentItem = list[position]
-
         holder.binding.apply {
-            countryName.text = currentItem.country
-            vaccinationDate.text = currentItem.date
-            totalVaccineNumber.text = currentItem.totalPeopleVaccinated.toString()
-            percentText.text = currentItem.vaccinatedPerHundred.toString()
+            vaccinationDate.text= currentItem?.date
+            countryName.text = currentItem?.country?.capitalize()
+            totalVaccineNumber.text = currentItem?.totalPeopleVaccinated.toString()
+            percentText.text = currentItem?.vaccinatedPerHundred.toString()
         }
     }
 }

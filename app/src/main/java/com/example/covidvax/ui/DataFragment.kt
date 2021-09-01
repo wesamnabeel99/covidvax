@@ -2,9 +2,11 @@ package com.example.covidvax.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.covidvax.databinding.FragmentDataBinding
-import com.example.covidvax.ui.adapters.VaccineAdapter
 import com.example.covidvax.data.DataManager
+import com.example.covidvax.data.domain.VaccineData
+import com.example.covidvax.databinding.FragmentDataBinding
+import com.example.covidvax.ui.BaseFragment
+import com.example.covidvax.ui.adapters.VaccineAdapter
 
 class DataFragment: BaseFragment<FragmentDataBinding>() {
     override val LOG_TAG: String = "DATA_FRAGMENT"
@@ -13,22 +15,9 @@ class DataFragment: BaseFragment<FragmentDataBinding>() {
             = FragmentDataBinding::inflate
 
     override fun addCallbacks() {
-        getData()
-        binding!!.fullyVaccinatedChip.setOnClickListener {
-            TODO("no implemented yet")
-        }
-        binding!!.oneDoseVaccinatedChip.setOnClickListener {
-            TODO("no implemented yet")
-        }
-        binding!!.twoDoseVaccinatedChip.setOnCloseIconClickListener {
-            TODO("no implemented yet")
-        }
-    }
 
-
-
-    private fun getData(){
-        val adapter = VaccineAdapter(DataManager.vaccineListData)
+        val adapter = VaccineAdapter(DataManager.wordList)
         binding?.dataRecyclerview?.adapter = adapter
+
     }
 }
