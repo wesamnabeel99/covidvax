@@ -17,20 +17,22 @@ class DataFragment: BaseFragment<FragmentDataBinding>() {
 
     override fun addCallbacks() {
         val adapter = VaccineAdapter(DataManager.sortCountriesBy(Property.TOTAL))
-        binding?.dataRecyclerview?.adapter = adapter
-        binding?.chipGroup?.setOnCheckedChangeListener { group, checkedId ->
-            when (checkedId) {
-                R.id.total_chip -> {
-                    adapter.updateData(DataManager.sortCountriesBy(Property.TOTAL))
-                }
-                R.id.percent_chip -> {
-                    adapter.updateData(DataManager.sortCountriesBy(Property.PERCENT))
-                }
-                R.id.one_dose_chip -> {
-                    adapter.updateData(DataManager.sortCountriesBy(Property.ONE_DOSE))
-                }
-                R.id.two_dose_chip -> {
-                    adapter.updateData(DataManager.sortCountriesBy(Property.TWO_DOSE))
+        binding?.apply {
+            dataRecyclerview.adapter = adapter
+            chipGroup.setOnCheckedChangeListener { group, checkedId ->
+                when (checkedId) {
+                    R.id.total_chip -> {
+                        adapter.updateData(DataManager.sortCountriesBy(Property.TOTAL))
+                    }
+                    R.id.percent_chip -> {
+                        adapter.updateData(DataManager.sortCountriesBy(Property.PERCENT))
+                    }
+                    R.id.one_dose_chip -> {
+                        adapter.updateData(DataManager.sortCountriesBy(Property.ONE_DOSE))
+                    }
+                    R.id.two_dose_chip -> {
+                        adapter.updateData(DataManager.sortCountriesBy(Property.TWO_DOSE))
+                    }
                 }
             }
         }

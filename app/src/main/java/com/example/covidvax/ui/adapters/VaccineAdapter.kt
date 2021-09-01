@@ -24,9 +24,9 @@ class VaccineAdapter(var list: List<VaccineData>) : RecyclerView.Adapter<Vaccine
         holder.binding.apply {
         countryNameTextView.text=currentItem?.country?.capitalize()
         rankTextView.text = "#" + (position+1).toString()
-        totalVaccinatedTextView.text = "Total Vaccinated:" + DataManager.abbreviateTheNumber(currentItem?.totalPeopleVaccinated!!)
-            oneDoseTextView.text = "One Dose Vaccinated:" + DataManager.abbreviateTheNumber(currentItem?.oneDoseVaccinated!!)
-            twoDoseTextView.text = "Two Dose Vaccinated:" + DataManager.abbreviateTheNumber(currentItem?.twoDoseVaccinated!!)
+        totalVaccinatedTextView.text = "Total Vaccinated:" + currentItem.totalPeopleVaccinated?.let { DataManager.abbreviateTheNumber(it) }
+            oneDoseTextView.text = "One Dose Vaccinated:" + currentItem.oneDoseVaccinated?.let { DataManager.abbreviateTheNumber(it) }
+            twoDoseTextView.text = "Two Dose Vaccinated:" + currentItem.twoDoseVaccinated?.let { DataManager.abbreviateTheNumber(it) }
             percentTextView.text = currentItem?.vaccinatedPerHundred.toString() + "% Vaccinated"
         }
     }

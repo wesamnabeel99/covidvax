@@ -5,10 +5,13 @@ import com.example.covidvax.utils.Property
 
 object DataManager {
     //region initialize variables
-    val daysList = mutableListOf<VaccineData>()
-    val countriesSet = mutableSetOf<String>() // sets don't allow duplication so we use it to store countries names
-    val countriesMap = mutableMapOf<String,MutableList<VaccineData>>()
+    private val daysList = mutableListOf<VaccineData>()
+    private val countriesSet = mutableSetOf<String>() // sets don't allow duplication so we use it to store countries names
+    private val countriesMap = mutableMapOf<String,MutableList<VaccineData>>()
     val worldList = mutableListOf<VaccineData>()
+
+    val countries : List<VaccineData>
+    get() = countries.toList()
 
     //endregion
 
@@ -32,7 +35,7 @@ object DataManager {
      */
     fun calculateCountryTotal() {
         countriesSet.forEach{
-            worldList.add(countryStatistics(it.lowercase()))
+            worldList.add(calculateCountryStatistics(it.lowercase()))
         }
 
     }
@@ -64,7 +67,7 @@ object DataManager {
      * @return the last statistics as an object for the given country
      * @author  Wesam N. Shawqi, Karrar Mohammed
      */
-    fun countryStatistics (country: String): VaccineData {
+    fun calculateCountryStatistics (country: String): VaccineData {
         if (country in countriesMap.keys) {
             return VaccineData(
                 country = country,
@@ -76,7 +79,7 @@ object DataManager {
                 vaccinatedPerHundred = countriesMap[country]!!.sortedBy { it.vaccinatedPerHundred }.last().vaccinatedPerHundred
             )
         }
-        else return VaccineData ("i","3",3,5,67,2,4.54)
+        else return VaccineData ("none","none",3,5,67,2,4.54)
     }
 
     /**
@@ -90,12 +93,11 @@ object DataManager {
         var worldOneDoseVaccination: Long = 0
         var worldTwoDoseVaccination: Long = 0
         var averageVaccinatedPerHundred:Double=0.0
-        countriesMap.forEach {
-            val countryData = countryStatistics(it.key)
-            worldTotalVaccinations += countryData?.totalPeopleVaccinated!!
-            worldOneDoseVaccination += countryData.oneDoseVaccinated!!
-            worldTwoDoseVaccination += countryData.twoDoseVaccinated!!
-            averageVaccinatedPerHundred += countryData.vaccinatedPerHundred!!
+        worldList.forEach {
+            worldTotalVaccinations+= it?.totalPeopleVaccinated!!
+            worldOneDoseVaccination +=it.oneDoseVaccinated!!
+            worldTwoDoseVaccination +=it.twoDoseVaccinated!!
+            averageVaccinatedPerHundred +=it.vaccinatedPerHundred!!
         }
         averageVaccinatedPerHundred/= countriesSet.size
         return VaccineData(
@@ -132,19 +134,18 @@ object DataManager {
      * @return List of sorted countries
      * @author Wesam N. Shawqi
      */
-    fun sortCountriesBy (property : Property) :List<VaccineData>
-            = when (property) {
+    fun sortCountriesBy (property : Property) :List<VaccineData> = when (property) {
         Property.TOTAL -> {
-            worldList.sortedByDescending { it.totalPeopleVaccinated!!.toLong() }
+            worldList.sortedByDescending { it.totalPeopleVaccinated?.let { it } }
         }
         Property.ONE_DOSE -> {
-            worldList.sortedByDescending { it.oneDoseVaccinated!!.toLong() }
+            worldList.sortedByDescending { it.oneDoseVaccinated?.let { it } }
         }
         Property.TWO_DOSE -> {
-            worldList.sortedByDescending { it.twoDoseVaccinated!!.toLong() }
+            worldList.sortedByDescending { it.twoDoseVaccinated?.let {it} }
         }
         Property.PERCENT -> {
-            worldList.sortedByDescending { it.vaccinatedPerHundred!!.toInt() }
+            worldList.sortedByDescending { it.vaccinatedPerHundred?.let { it } }
         }
     }
 

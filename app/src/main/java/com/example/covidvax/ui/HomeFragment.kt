@@ -22,7 +22,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 //region callbacks
     override fun addCallbacks() {
         val world = DataManager.worldStatistics()
-        bindDay(world!!)
+        bindDay(world)
 
     /**
      * open popup dialog
@@ -56,11 +56,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
      */
     private fun bindDay (data: VaccineData) {
         binding?.apply {
-            firstDataView.text = "One Dose Vaccinated : ${DataManager.abbreviateTheNumber(data.oneDoseVaccinated!!)}"
-            secondDataView.text = "two Dose Vaccinated : ${DataManager.abbreviateTheNumber(data.twoDoseVaccinated!!)}"
-            thirdDataView.text = "total Vaccinated : ${DataManager.abbreviateTheNumber(data.totalPeopleVaccinated!!)}"
-            forthDataView.text = "percent : ${DataManager.abbreviateTheNumber(data.vaccinatedPerHundred!!.toLong())}%"
-        }
+            firstDataView.text = "One Dose Vaccinated : ${data.oneDoseVaccinated?.let { DataManager.abbreviateTheNumber(it) }}"
+            secondDataView.text = "two Dose Vaccinated : ${data.twoDoseVaccinated?.let { DataManager.abbreviateTheNumber(it) }}"
+            thirdDataView.text = "total Vaccinated : ${data.totalPeopleVaccinated?.let { DataManager.abbreviateTheNumber(it) }}"
+            forthDataView.text = "percent : ${data.vaccinatedPerHundred?.toLong()}%"        }
     }
 
 //endregion

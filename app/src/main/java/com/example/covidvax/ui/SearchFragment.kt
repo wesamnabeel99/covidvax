@@ -21,29 +21,16 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>(), SearchView.OnQueryT
 
     private fun bindTheData(lastDay: VaccineData) {
         binding?.apply {
-            totalVaccinated.text = DataManager.abbreviateTheNumber(lastDay.totalPeopleVaccinated!!)
-            fullyVaccinated.text = DataManager.abbreviateTheNumber(lastDay.twoDoseVaccinated!!)
-            oneDoseVaccinated.text = DataManager.abbreviateTheNumber(lastDay.oneDoseVaccinated!!)
+            totalVaccinated.text = lastDay.totalPeopleVaccinated?.let { DataManager.abbreviateTheNumber(it) }
+            fullyVaccinated.text = lastDay.twoDoseVaccinated?.let { DataManager.abbreviateTheNumber(it) }
+            oneDoseVaccinated.text = lastDay.oneDoseVaccinated?.let { DataManager.abbreviateTheNumber(it) }
             lastUpdateText.text = "last update on : ${lastDay.date}"
             country.text = lastDay.country.capitalize()
             vaccinatedPerHundred.text = "${lastDay.vaccinatedPerHundred}%"
-            when {
-                lastDay.vaccinatedPerHundred!!<30.0 -> {
-                    animation.setAnimation(R.raw.belowthirty)
-                    animation.playAnimation()
-                }
-                lastDay.vaccinatedPerHundred>=30.0&&lastDay.vaccinatedPerHundred<70.0 -> {
-                    animation.setAnimation(R.raw.vaccinating)
-                    animation.playAnimation()
-                }
-                else -> {
-                    animation.setAnimation(R.raw.fullyvaccinated)
-                    animation.playAnimation()
-                }
-            }
+           playAnimation(lastDay)
         }
     }
-    private fun notFound() {
+    private fun showNotFoundStatus() {
         binding?.apply {
             pieChart.isVisible=false
             totalVaccinated.text = "N/A"
@@ -52,7 +39,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>(), SearchView.OnQueryT
             lastUpdateText.text = "N/A"
             vaccinatedPerHundred.text = ""
             country.text="not found"
-            animation!!.setAnimation(R.raw.notfound)
+            animation.setAnimation(R.raw.notfound)
             animation.playAnimation()
         }
     }
@@ -69,12 +56,12 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>(), SearchView.OnQueryT
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        val countryStatistics = DataManager.countryStatistics(binding?.searchBar?.query!!.toString().lowercase())
-        if (countryStatistics!=null) {
+        val countryStatistics = DataManager.calculateCountryStatistics(binding?.searchBar?.query!!.toString().lowercase())
+        if (countryStatistics.country!="none") {
             bindTheData(countryStatistics)
             addToPieChart(countryStatistics)
         } else {
-            notFound()
+            showNotFoundStatus()
         }
         return true
     }
@@ -83,5 +70,20 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>(), SearchView.OnQueryT
         return true
     }
 
-
+    private fun playAnimation(lastDay :VaccineData) {
+        when {
+            lastDay.vaccinatedPerHundred!!<30.0 -> {
+                binding?.animation?.setAnimation(R.raw.belowthirty)
+                binding?.animation?.playAnimation()
+            }
+            lastDay.vaccinatedPerHundred>=30.0&&lastDay.vaccinatedPerHundred<70.0 -> {
+                binding?.animation?.setAnimation(R.raw.vaccinating)
+                binding?.animation?.playAnimation()
+            }
+            else -> {
+                binding?.animation?.setAnimation(R.raw.fullyvaccinated)
+                binding?.animation?.playAnimation()
+            }
+        }
+    }
 }
