@@ -1,5 +1,6 @@
 package com.example.covidvax.data
 
+import android.util.Log
 import com.example.covidvax.data.domain.VaccineData
 
 object DataManager {
@@ -7,9 +8,10 @@ object DataManager {
     val daysList = mutableListOf<VaccineData>()
     val countriesSet = mutableSetOf<String>() // sets don't allow duplication so we use it to store countries names
     val countriesMap = mutableMapOf<String,MutableList<VaccineData>>()
+    val wordList = mutableListOf<VaccineData?>()
+
     //endregion
-    val vaccineListData: List<VaccineData>
-    get() = daysList
+
     //region data initialization
     /**
      * this function will add day data to the daysList and add country name to the countriesSet
@@ -22,6 +24,18 @@ object DataManager {
         daysList.add(vaccineData)
         countriesSet.add(vaccineData.country)
     }
+    /**
+     * this function will add a filtered list to countriesSet.
+     * @param Unit
+     * @return Unit
+     * @author  Basheer Sameer
+     */
+    fun calculateCountryTotal() {
+        countriesSet.forEach{
+            wordList.add(countryStatistics(it.lowercase()))
+        }
+
+    }
     //endregion
 
     //region data mapping
@@ -33,7 +47,7 @@ object DataManager {
      */
     fun mapTheData () {
         countriesSet.forEach() {
-            countriesMap.put (it.lowercase(), filterListByCountry(it))
+            countriesMap[it.lowercase()] = filterListByCountry(it)
         }
     }
     /**
@@ -41,7 +55,7 @@ object DataManager {
      * @return list of data entries for the gven country
      * @author  Mohammed Zalzala
      */
-    private fun filterListByCountry(country:String) = daysList.filter { it.country == country } as MutableList<VaccineData>
+    fun filterListByCountry(country:String) = daysList.filter { it.country == country } as MutableList<VaccineData>
     //endregion
 
     //region filter functions
@@ -71,7 +85,7 @@ object DataManager {
      * @return the total statistics as an object for the world
      * @author  Wesam N. Shawqi, Karrar M. Habeeb
      */
-    fun worldStatistics(): VaccineData? {
+    fun worldStatistics(): VaccineData {
         var worldTotalVaccinations: Long = 0
         var worldOneDoseVaccination: Long = 0
         var worldTwoDoseVaccination: Long = 0

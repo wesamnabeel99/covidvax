@@ -60,7 +60,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             secondDataView.text = "two Dose Vaccinated : ${DataManager.abbreviateTheNumber(data.twoDoseVaccinated!!)}"
             thirdDataView.text = "total Vaccinated : ${DataManager.abbreviateTheNumber(data.totalPeopleVaccinated!!)}"
             forthDataView.text = "percent : ${DataManager.abbreviateTheNumber(data.vaccinatedPerHundred!!.toLong())}%"
-
         }
     }
 
