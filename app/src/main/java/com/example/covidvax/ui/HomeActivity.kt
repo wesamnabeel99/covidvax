@@ -3,6 +3,7 @@ package com.example.covidvax.ui
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.system.Os.remove
 import androidx.fragment.app.Fragment
 import com.example.covidvax.R
 import com.example.covidvax.databinding.ActivityHomeBinding
@@ -115,8 +116,8 @@ class HomeActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
-    //endregion
-    
+
+
     companion object{
         var LOG_TAG = "HOME_ACTIVITY_DATA"
     }
