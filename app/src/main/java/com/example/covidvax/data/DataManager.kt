@@ -1,14 +1,14 @@
 package com.example.covidvax.data
 
-import android.util.Log
 import com.example.covidvax.data.domain.VaccineData
+import com.example.covidvax.utils.Property
 
 object DataManager {
     //region initialize variables
     val daysList = mutableListOf<VaccineData>()
     val countriesSet = mutableSetOf<String>() // sets don't allow duplication so we use it to store countries names
     val countriesMap = mutableMapOf<String,MutableList<VaccineData>>()
-    val wordList = mutableListOf<VaccineData?>()
+    val worldList = mutableListOf<VaccineData>()
 
     //endregion
 
@@ -25,14 +25,14 @@ object DataManager {
         countriesSet.add(vaccineData.country)
     }
     /**
-     * this function will add a filtered list to countriesSet.
-     * @param Unit
+     * this function will add the last statistics of countries to worldList
+     * @param none
      * @return Unit
      * @author  Basheer Sameer
      */
     fun calculateCountryTotal() {
         countriesSet.forEach{
-            wordList.add(countryStatistics(it.lowercase()))
+            worldList.add(countryStatistics(it.lowercase()))
         }
 
     }
@@ -64,7 +64,7 @@ object DataManager {
      * @return the last statistics as an object for the given country
      * @author  Wesam N. Shawqi, Karrar Mohammed
      */
-    fun countryStatistics (country: String): VaccineData? {
+    fun countryStatistics (country: String): VaccineData {
         if (country in countriesMap.keys) {
             return VaccineData(
                 country = country,
@@ -76,7 +76,7 @@ object DataManager {
                 vaccinatedPerHundred = countriesMap[country]!!.sortedBy { it.vaccinatedPerHundred }.last().vaccinatedPerHundred
             )
         }
-        else return null
+        else return VaccineData ("i","3",3,5,67,2,4.54)
     }
 
     /**
@@ -126,5 +126,28 @@ object DataManager {
         )
     }
 
-        //endregion
+    /**
+     * this function sort the countries descending by the giving proberty
+     * @param property : Property to sort the list by it
+     * @return List of sorted countries
+     * @author Wesam N. Shawqi
+     */
+    fun sortCountriesBy (property : Property) :List<VaccineData>
+            = when (property) {
+        Property.TOTAL -> {
+            worldList.sortedByDescending { it.totalPeopleVaccinated!!.toLong() }
+        }
+        Property.ONE_DOSE -> {
+            worldList.sortedByDescending { it.oneDoseVaccinated!!.toLong() }
+        }
+        Property.TWO_DOSE -> {
+            worldList.sortedByDescending { it.twoDoseVaccinated!!.toLong() }
+        }
+        Property.PERCENT -> {
+            worldList.sortedByDescending { it.vaccinatedPerHundred!!.toInt() }
+        }
+    }
+
+
+    //endregion
 }

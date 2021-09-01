@@ -6,54 +6,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:contex="ui.activity.MainActivity">
 
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:id="@+id/vaccine_world_image_view"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:src="@drawable/world_vaccine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/tajawalbold"
+        android:text="Let's Save The World Together"
+        android:textColor="@color/brand"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/vaccine_world_image_view"
+        app:layout_constraintStart_toStartOf="@+id/vaccine_world_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/vaccine_world_image_view" />
+
+    <TextView
+        android:layout_marginStart="16dp"
+        android:id="@+id/sort_by_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/tajawalbold"
+        android:text="Sort Data By"
+        android:textColor="@color/brand"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:checkedChip="@id/total_chip"
+        app:layout_constraintStart_toStartOf="@+id/sort_by_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/sort_by_text_view"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/total_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            app:chipIconEnabled="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/percent_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Percen Vaccinated"
+             />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/one_dose_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Dose Vaccinated"
+             />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/two_dose_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Two Dose Vaccinated"
+             />
+
+
+    </com.google.android.material.chip.ChipGroup>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/data_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/chipGroup"
+        app:layout_constraintTop_toBottomOf="@id/chip_group"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/fully_vaccinated_chip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fully Vaccinated"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            app:chipBackgroundColor="@color/brand" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/one_dose_vaccinated_chip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="one dose vaccinated "
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            app:chipBackgroundColor="@color/brand" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/two_dose_vaccinated_chip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="two dose Vaccinated"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            app:chipBackgroundColor="@color/brand" />
-
-
-    </com.google.android.material.chip.ChipGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

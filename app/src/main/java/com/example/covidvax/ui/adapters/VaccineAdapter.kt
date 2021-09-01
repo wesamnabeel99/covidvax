@@ -1,13 +1,17 @@
 package com.example.covidvax.ui.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covidvax.R
+import com.example.covidvax.data.DataManager
 import com.example.covidvax.data.domain.VaccineData
-import com.example.covidvax.ui.viewholdres.VaccineHolder
+import com.example.covidvax.databinding.ItemVaccineBinding
+import com.example.olympics.ui.VaccineDiffUtil
 
-class VaccineAdapter(val list: List<VaccineData?>) : RecyclerView.Adapter<VaccineHolder>(){
+class VaccineAdapter(var list: List<VaccineData>) : RecyclerView.Adapter<VaccineAdapter.VaccineHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VaccineHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_vaccine,parent,false)
         return VaccineHolder(itemView)
@@ -16,12 +20,23 @@ class VaccineAdapter(val list: List<VaccineData?>) : RecyclerView.Adapter<Vaccin
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: VaccineHolder, position: Int) {
-        val currentItem = list[position]
+        var currentItem = list[position]
         holder.binding.apply {
-            vaccinationDate.text= currentItem?.date
-            countryName.text = currentItem?.country?.capitalize()
-            totalVaccineNumber.text = currentItem?.totalPeopleVaccinated.toString()
-            percentText.text = currentItem?.vaccinatedPerHundred.toString()
+        countryNameTextView.text=currentItem?.country?.capitalize()
+        rankTextView.text = "#" + (position+1).toString()
+        totalVaccinatedTextView.text = "Total Vaccinated:" + DataManager.abbreviateTheNumber(currentItem?.totalPeopleVaccinated!!)
+            oneDoseTextView.text = "One Dose Vaccinated:" + DataManager.abbreviateTheNumber(currentItem?.oneDoseVaccinated!!)
+            twoDoseTextView.text = "Two Dose Vaccinated:" + DataManager.abbreviateTheNumber(currentItem?.twoDoseVaccinated!!)
+            percentTextView.text = currentItem?.vaccinatedPerHundred.toString() + "% Vaccinated"
         }
+    }
+    fun updateData(newList:List<VaccineData>) {
+        val diffrentResult = DiffUtil.calculateDiff(VaccineDiffUtil(list,newList))
+        list = newList
+        diffrentResult.dispatchUpdatesTo(this)
+    }
+
+    class VaccineHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val binding = ItemVaccineBinding.bind(itemView)
     }
 }
