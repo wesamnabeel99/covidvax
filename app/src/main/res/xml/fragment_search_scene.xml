@@ -100,9 +100,9 @@
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@+id/start" >
 
-        <OnClick
+        <OnSwipe
             app:targetId="@+id/search_bar"
-            app:clickAction="transitionToEnd"
+            app:dragDirection="dragDown"
             app:touchAnchorId="@id/search_bar"
             />
     </Transition>

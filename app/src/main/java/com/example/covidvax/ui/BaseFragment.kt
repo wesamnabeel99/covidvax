@@ -27,6 +27,7 @@ abstract class BaseFragment<VB: ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        container?.removeAllViews()
         _binding = bindingInflater(inflater,container,false)
         return requireNotNull(_binding).root
     }
