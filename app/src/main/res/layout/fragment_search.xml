@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <androidx.constraintlayout.widget.ConstraintLayout
 
             android:layout_width="match_parent"
@@ -31,8 +32,8 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="16dp"
-                    android:background="@drawable/card_view_shape" >
+                    android:background="@drawable/card_view_shape"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/textView7"
@@ -64,21 +65,19 @@
                         android:layout_width="320dp"
                         android:layout_height="56dp"
                         android:layout_marginTop="24dp"
-                        android:background="@drawable/backgroundimg1"
-                        android:inputType="text"
-                        android:padding="8dp"
-                        android:imeOptions="actionSearch"
-                        android:layoutDirection="rtl"
-                        app:queryHint="Country Name .."
                         android:layout_marginBottom="24dp"
+                        android:background="@drawable/backgroundimg1"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:layoutDirection="rtl"
+                        android:padding="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/textView9"
                         app:layout_constraintHorizontal_bias="0.506"
                         app:layout_constraintStart_toStartOf="@+id/textView9"
                         app:layout_constraintTop_toBottomOf="@+id/textView9"
-                        app:layout_constraintVertical_bias="0.404" />
-
-
+                        app:layout_constraintVertical_bias="0.404"
+                        app:queryHint="Country Name .." />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -92,9 +91,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:text="Available Data"
-                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/home_fragment_first_cardView"
                 app:layout_constraintTop_toBottomOf="@+id/home_fragment_first_cardView" />
 
@@ -102,10 +101,12 @@
                 android:id="@+id/cardView4"
                 android:layout_width="115dp"
                 android:layout_height="130dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
-
                 app:cardCornerRadius="20dp"
-                app:layout_constraintStart_toStartOf="@+id/reasons_to_vaccinate_txtview"
+                app:layout_constraintEnd_toStartOf="@+id/cardView6"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/reasons_to_vaccinate_txtview">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -146,9 +147,12 @@
                 android:id="@+id/cardView6"
                 android:layout_width="115dp"
                 android:layout_height="130dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/cardView4"
+                app:layout_constraintEnd_toStartOf="@+id/cardView7"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/cardView4"
                 app:layout_constraintTop_toTopOf="@+id/cardView4"
                 tools:ignore="DuplicateIds">
@@ -163,9 +167,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
-                        android:textSize="12sp"
                         android:text="Fully Vaccinated"
                         android:textColor="@color/black"
+                        android:textSize="12sp"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -188,10 +192,12 @@
                 android:id="@+id/cardView7"
                 android:layout_width="115dp"
                 android:layout_height="130dp"
-                android:layout_marginStart="16dp"
 
+                android:layout_marginEnd="8dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/cardView6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/cardView6"
                 app:layout_constraintTop_toTopOf="@+id/cardView6">
 
@@ -243,10 +249,7 @@
                 android:id="@+id/cardView5"
                 android:layout_width="377dp"
                 android:layout_height="160dp"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/cardView7"
                 app:layout_constraintStart_toStartOf="@+id/cardView4"
